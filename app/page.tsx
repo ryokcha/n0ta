@@ -1,0 +1,108 @@
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white dark:bg-black">
+      {/* Header/Navigation */}
+      <header className="border-b border-gray-200 dark:border-gray-800">
+        <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
+          <Link href="/">
+            <h1 className="text-2xl font-bold text-black dark:text-white hover:opacity-80 transition-opacity">n0ta</h1>
+          </Link>
+          <ul className="flex gap-8">
+            <li>
+              <Link
+                href="/"
+                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/products"
+                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              >
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <main className="max-w-4xl mx-auto px-6 py-20">
+        <section className="text-center mb-20">
+          <h2 className="text-5xl font-bold text-black dark:text-white mb-6">
+            Nakai Ryoka
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+            Portfolio & Creative Work
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Link
+              href="/about"
+              className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-80 transition-opacity"
+            >
+              Learn More
+            </Link>
+            <Link
+              href="/contact"
+              className="px-8 py-3 border-2 border-black dark:border-white text-black dark:text-white rounded-lg font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+            >
+              Get In Touch
+            </Link>
+          </div>
+        </section>
+
+        {/* Featured Section */}
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-black dark:text-white mb-4">
+              Welcome
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+              I am Nakai Ryoka, a creative professional passionate about building
+              beautiful and functional digital experiences.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Explore my portfolio to see my recent projects and works. Feel free
+              to reach out if you would like to collaborate or discuss ideas.
+            </p>
+          </div>
+          <div className="bg-gray-100 dark:bg-gray-900 aspect-square rounded-lg flex items-center justify-center">
+            <div className="text-center">
+              <div className="text-6xl mb-4">👋</div>
+              <p className="text-gray-600 dark:text-gray-400">
+                Portfolio coming soon
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-200 dark:border-gray-800 mt-20">
+        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-gray-600 dark:text-gray-400">
+          <p>&copy; 2024 Nakai Ryoka. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
