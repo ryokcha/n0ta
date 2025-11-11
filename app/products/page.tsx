@@ -26,11 +26,11 @@ export default function Products() {
     {
       id: 4,
       title: "E-commerce Platform",
-      description: "最新のフロントエンドとロバストなバックエンドを備えたフルスタックeコマースソリューション。",
+      description: "最新のフロントエンドとロバストなバックエンドを備えたフルスタックEコマースソリューション。",
       tags: ["Full-Stack", "React", "Node.js"],
       status: "Planning",
     },
-  ];
+  ].sort((a, b) => b.id - a.id);
 
   return (
     <div className="min-h-screen bg-white">
@@ -135,16 +135,13 @@ export default function Products() {
           <p className="text-xl text-gray-700 leading-relaxed">
             これからもどんどん更新ができるよう、成長していきます
           </p>
-          <p className="text-lg text-gray-600 mt-4">
-            I will continue to grow so I can keep updating.
-          </p>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="border-t border-gray-200 mt-20">
         <div className="max-w-4xl mx-auto px-6 py-8 text-center text-gray-600">
-          <p>&copy; 2025 Nakai Ryoka. All rights reserved.</p>
+          <p>&copy; 2024 Nakai Ryoka. All rights reserved.</p>
         </div>
       </footer>
     </div>
