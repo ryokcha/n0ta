@@ -52,7 +52,7 @@ export default function Home() {
               href="/about"
               className="px-8 py-3 bg-black text-white rounded-lg font-medium hover:opacity-80 transition-opacity"
             >
-              Learn More
+              About Me
             </Link>
             <Link
               href="/contact"
@@ -64,28 +64,18 @@ export default function Home() {
         </section>
 
         {/* Featured Section */}
-        <section className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-3xl font-bold text-black mb-4">
-              Welcome
-            </h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              I am Nakai Ryoka, a creative professional passionate about building
-              beautiful and functional digital experiences.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Explore my portfolio to see my recent projects and works. Feel free
-              to reach out if you would like to collaborate or discuss ideas.
-            </p>
-          </div>
-          <div className="bg-gray-100 aspect-square rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-6xl mb-4">👋</div>
-              <p className="text-gray-600">
-                Portfolio coming soon
-              </p>
-            </div>
-          </div>
+        <section className="mb-20">
+          <h3 className="text-3xl font-bold text-black mb-4">
+            Welcome
+          </h3>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            I am Nakai Ryoka, a creative professional passionate about building
+            beautiful and functional digital experiences.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            Explore my portfolio to see my recent projects and works. Feel free
+            to reach out if you would like to collaborate or discuss ideas.
+          </p>
         </section>
       </main>
 
