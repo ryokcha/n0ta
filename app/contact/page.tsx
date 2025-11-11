@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaXTwitter, FaGithub } from "react-icons/fa6";
+import { FaXTwitter, FaGithub, FaEnvelope } from "react-icons/fa6";
 
 export default function Contact() {
   const socialLinks = [
@@ -107,54 +107,29 @@ export default function Contact() {
                 </a>
                 );
               })}
+              <a
+                href="mailto:922ryouka@gmail.com"
+                className="flex items-center gap-4 p-4 border-2 border-gray-200 rounded-lg hover:border-black transition-colors group"
+              >
+                <div className="text-4xl group-hover:scale-110 transition-transform text-black">
+                  <FaEnvelope />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-black">
+                    Send a Message
+                  </h4>
+                  <p className="text-gray-600">
+                    お使いのメールクライアントが開きます
+                  </p>
+                </div>
+                <span className="ml-auto text-gray-400 group-hover:text-gray-600 transition-colors">
+                  →
+                </span>
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Direct Message Section */}
-        <section>
-          <h3 className="text-3xl font-bold text-black mb-8">
-            Send a Message
-          </h3>
-          <form className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-black mb-2">
-                お名前
-              </label>
-              <input
-                type="text"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-white text-black focus:outline-none focus:border-black transition-colors"
-                placeholder="お名前を入力してください"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-black mb-2">
-                メールアドレス
-              </label>
-              <input
-                type="email"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-white text-black focus:outline-none focus:border-black transition-colors"
-                placeholder="your.email@example.com"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-black mb-2">
-                メッセージ
-              </label>
-              <textarea
-                rows={6}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg bg-white text-black focus:outline-none focus:border-black transition-colors resize-none"
-                placeholder="メッセージを入力してください..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full px-8 py-3 bg-black text-white rounded-lg font-medium hover:opacity-80 transition-opacity"
-            >
-              Send Message
-            </button>
-          </form>
-        </section>
       </main>
 
       {/* Footer */}
