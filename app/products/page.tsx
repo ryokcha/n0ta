@@ -26,11 +26,11 @@ export default function Products() {
     {
       id: 4,
       title: "E-commerce Platform",
-      description: "最新のフロントエンドとロバストなバックエンドを備えたフルスタックeコマースソリューション。",
+      description: "最新のフロントエンドとロバストなバックエンドを備えたフルスタックEコマースソリューション。",
       tags: ["Full-Stack", "React", "Node.js"],
       status: "Planning",
     },
-  ];
+  ].sort((a, b) => b.id - a.id);
 
   return (
     <div className="min-h-screen bg-white">
@@ -134,9 +134,6 @@ export default function Products() {
         <section className="bg-gray-50 rounded-lg p-12 text-center">
           <p className="text-xl text-gray-700 leading-relaxed">
             これからもどんどん更新ができるよう、成長していきます
-          </p>
-          <p className="text-lg text-gray-600 mt-4">
-            I will continue to grow so I can keep updating.
           </p>
         </section>
       </main>
