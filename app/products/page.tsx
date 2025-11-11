@@ -5,54 +5,46 @@ export default function Products() {
     {
       id: 1,
       title: "Project Alpha",
-      description: "A modern web application showcasing responsive design and user-centered approach.",
+      description: "レスポンシブデザインとユーザー中心のアプローチを展示している最新のWebアプリケーション。",
       tags: ["React", "Next.js", "Tailwind CSS"],
       status: "Completed",
     },
     {
       id: 2,
       title: "Design System",
-      description: "Comprehensive design system with reusable components and design guidelines.",
+      description: "再利用可能なコンポーネントとデザインガイドラインを備えた包括的なデザインシステム。",
       tags: ["UI/UX", "Design", "Documentation"],
       status: "Completed",
     },
     {
       id: 3,
       title: "Mobile App",
-      description: "Cross-platform mobile application with intuitive interface and smooth interactions.",
+      description: "直感的なインターフェースとスムーズなインタラクションを備えたクロスプラットフォームモバイルアプリケーション。",
       tags: ["Mobile", "UI Design", "Development"],
       status: "In Progress",
     },
     {
       id: 4,
       title: "E-commerce Platform",
-      description: "Full-stack e-commerce solution with modern frontend and robust backend.",
+      description: "最新のフロントエンドとロバストなバックエンドを備えたフルスタックeコマースソリューション。",
       tags: ["Full-Stack", "React", "Node.js"],
       status: "Planning",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
-      <header className="border-b border-gray-200 dark:border-gray-800">
+      <header className="border-b border-gray-200">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
-            <h1 className="text-2xl font-bold text-black dark:text-white hover:opacity-80 transition-opacity">n0ta</h1>
+            <h1 className="text-2xl font-bold text-black hover:opacity-80 transition-opacity">n0ta</h1>
           </Link>
-          <ul className="flex gap-8">
-            <li>
-              <Link
-                href="/"
-                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
-              >
-                Home
-              </Link>
-            </li>
+          <ul className="flex gap-8 items-center">
             <li>
               <Link
                 href="/about"
-                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+                className="text-gray-900 hover:text-gray-600 transition-colors"
               >
                 About
               </Link>
@@ -60,7 +52,7 @@ export default function Products() {
             <li>
               <Link
                 href="/products"
-                className="text-gray-900 dark:text-gray-100 font-semibold hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+                className="text-gray-900 font-semibold hover:text-gray-600 transition-colors"
               >
                 Products
               </Link>
@@ -68,10 +60,12 @@ export default function Products() {
             <li>
               <Link
                 href="/contact"
-                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+                className="text-gray-900 hover:text-gray-600 transition-colors"
               >
                 Contact
               </Link>
+            </li>
+            <li>
             </li>
           </ul>
         </nav>
@@ -81,10 +75,10 @@ export default function Products() {
       <main className="max-w-4xl mx-auto px-6 py-20">
         {/* Page Title */}
         <section className="mb-16">
-          <h2 className="text-5xl font-bold text-black dark:text-white mb-8">
+          <h2 className="text-5xl font-bold text-black mb-8">
             Products & Projects
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-xl text-gray-600">
             A showcase of my recent work and creative projects.
           </p>
         </section>
@@ -95,20 +89,20 @@ export default function Products() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-gray-50 dark:bg-gray-900 rounded-lg p-8 hover:shadow-lg dark:hover:shadow-2xl transition-shadow"
+                className="bg-gray-50 rounded-lg p-8 hover:shadow-lg transition-shadow"
               >
                 {/* Project Header */}
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-black dark:text-white">
+                  <h3 className="text-xl font-bold text-black">
                     {product.title}
                   </h3>
                   <span
                     className={`text-sm font-medium px-3 py-1 rounded-full ${
                       product.status === "Completed"
-                        ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100"
+                        ? "bg-green-100 text-green-800"
                         : product.status === "In Progress"
-                          ? "bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100"
-                          : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+                          ? "bg-blue-100 text-blue-800"
+                          : "bg-gray-200 text-gray-800"
                     }`}
                   >
                     {product.status}
@@ -116,7 +110,7 @@ export default function Products() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {product.description}
                 </p>
 
@@ -125,7 +119,7 @@ export default function Products() {
                   {product.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-sm px-3 py-1 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full"
+                      className="text-sm px-3 py-1 bg-gray-200 text-gray-800 rounded-full"
                     >
                       {tag}
                     </span>
@@ -137,19 +131,19 @@ export default function Products() {
         </section>
 
         {/* Closing Message */}
-        <section className="bg-gray-50 dark:bg-gray-900 rounded-lg p-12 text-center">
-          <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+        <section className="bg-gray-50 rounded-lg p-12 text-center">
+          <p className="text-xl text-gray-700 leading-relaxed">
             これからもどんどん更新ができるよう、成長していきます
           </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mt-4">
+          <p className="text-lg text-gray-600 mt-4">
             I will continue to grow so I can keep updating.
           </p>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-gray-600 dark:text-gray-400">
+      <footer className="border-t border-gray-200 mt-20">
+        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-gray-600">
           <p>&copy; 2024 Nakai Ryoka. All rights reserved.</p>
         </div>
       </footer>

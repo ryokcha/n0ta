@@ -16,3 +16,5 @@ Contact
 各種SNSのリンクを貼り付ける。リンクは以下。
 Twitter：https://x.com/Nakai_0r314
 GitHub：https://github.com/ryokcha
+
+プロジェクト内およびこの開発においてはデフォルトの言語は日本語である。
