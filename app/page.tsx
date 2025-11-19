@@ -2,18 +2,18 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F4F6F7]">
       {/* Header/Navigation */}
-      <header className="border-b border-gray-200">
+      <header className="border-b border-[#D9DEE2]">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
-            <h1 className="text-2xl font-bold text-black hover:opacity-80 transition-opacity">n0ta</h1>
+            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:opacity-80 transition-opacity">n0ta</h1>
           </Link>
           <ul className="flex gap-8 items-center">
             <li>
               <Link
                 href="/about"
-                className="text-gray-900 hover:text-gray-600 transition-colors"
+                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
               >
                 About
               </Link>
@@ -21,7 +21,7 @@ export default function Home() {
             <li>
               <Link
                 href="/products"
-                className="text-gray-900 hover:text-gray-600 transition-colors"
+                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
               >
                 Products
               </Link>
@@ -29,7 +29,7 @@ export default function Home() {
             <li>
               <Link
                 href="/contact"
-                className="text-gray-900 hover:text-gray-600 transition-colors"
+                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
               >
                 Contact
               </Link>
@@ -41,22 +41,22 @@ export default function Home() {
       {/* Hero Section */}
       <main className="max-w-4xl mx-auto px-6 py-20">
         <section className="text-center mb-20">
-          <h2 className="text-5xl font-bold text-black mb-6">
+          <h2 className="text-5xl font-bold text-[#6C8FA3] mb-6">
             Nakai Ryoka
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-[#4A4F52] mb-8">
             Portfolio & Creative Work
           </p>
           <div className="flex gap-4 justify-center">
             <Link
               href="/about"
-              className="px-8 py-3 bg-black text-white rounded-lg font-medium hover:opacity-80 transition-opacity"
+              className="px-8 py-3 bg-[#6C8FA3] text-[#F4F6F7] rounded-lg font-medium hover:bg-[#D5848C] transition-colors"
             >
               About Me
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border-2 border-black text-black rounded-lg font-medium hover:bg-black hover:text-white transition-colors"
+              className="px-8 py-3 border-2 border-[#6C8FA3] text-[#6C8FA3] rounded-lg font-medium hover:bg-[#F7E3E5] transition-colors"
             >
               Get In Touch
             </Link>
@@ -64,15 +64,15 @@ export default function Home() {
         </section>
 
         {/* Featured Section */}
-        <section className="mb-20">
-          <h3 className="text-3xl font-bold text-black mb-4">
+        <section className="mb-20 text-center">
+          <h3 className="text-3xl font-bold text-[#6C8FA3] mb-4">
             Welcome
           </h3>
-          <p className="text-gray-600 mb-4 leading-relaxed">
+          <p className="text-[#4A4F52] mb-4 leading-relaxed">
             I am Nakai Ryoka, a creative professional passionate about building
             beautiful and functional digital experiences.
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-[#4A4F52] leading-relaxed">
             Explore my portfolio to see my recent projects and works. Feel free
             to reach out if you would like to collaborate or discuss ideas.
           </p>
@@ -80,8 +80,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-gray-600">
+      <footer className="border-t border-[#D9DEE2] mt-20">
+        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-[#4A4F52]">
           <p>&copy; 2025 Nakai Ryoka. All rights reserved.</p>
         </div>
       </footer>

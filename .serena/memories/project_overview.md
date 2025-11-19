@@ -24,7 +24,7 @@ Portfolio/Personal Website
 
 ## Required Pages (from claude.md)
 1. **About** - Self-introduction page
-2. **Products** - Showcase of past works with the closing message: "これからもどんどん更新ができるよう、成長していきます" (I will continue to grow so I can keep updating)
+2. **Products** - Showcase of past works with the closing message: "Un roseau pensant"
 3. **Contact** - Links to social media:
    - Twitter: https://x.com/Nakai_0r314
    - GitHub: https://github.com/ryokcha

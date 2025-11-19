@@ -33,18 +33,18 @@ export default function Products() {
   ].sort((a, b) => b.id - a.id);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F4F6F7]">
       {/* Header/Navigation */}
-      <header className="border-b border-gray-200">
+      <header className="border-b border-[#D9DEE2]">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
-            <h1 className="text-2xl font-bold text-black hover:opacity-80 transition-opacity">n0ta</h1>
+            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:opacity-80 transition-opacity">n0ta</h1>
           </Link>
           <ul className="flex gap-8 items-center">
             <li>
               <Link
                 href="/about"
-                className="text-gray-900 hover:text-gray-600 transition-colors"
+                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
               >
                 About
               </Link>
@@ -52,7 +52,7 @@ export default function Products() {
             <li>
               <Link
                 href="/products"
-                className="text-gray-900 font-semibold hover:text-gray-600 transition-colors"
+                className="text-[#6C8FA3] font-semibold hover:text-[#4A4F52] transition-colors"
               >
                 Products
               </Link>
@@ -60,7 +60,7 @@ export default function Products() {
             <li>
               <Link
                 href="/contact"
-                className="text-gray-900 hover:text-gray-600 transition-colors"
+                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
               >
                 Contact
               </Link>
@@ -75,10 +75,10 @@ export default function Products() {
       <main className="max-w-4xl mx-auto px-6 py-20">
         {/* Page Title */}
         <section className="mb-16">
-          <h2 className="text-5xl font-bold text-black mb-8">
+          <h2 className="text-5xl font-bold text-[#6C8FA3] mb-8">
             Products & Projects
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-[#4A4F52]">
             A showcase of my recent work and creative projects.
           </p>
         </section>
@@ -89,20 +89,20 @@ export default function Products() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-gray-50 rounded-lg p-8 hover:shadow-lg transition-shadow"
+                className="bg-[#E9EEF0] rounded-lg p-8 hover:shadow-lg transition-shadow"
               >
                 {/* Project Header */}
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-black">
+                  <h3 className="text-xl font-bold text-[#6C8FA3]">
                     {product.title}
                   </h3>
                   <span
                     className={`text-sm font-medium px-3 py-1 rounded-full ${
                       product.status === "Completed"
-                        ? "bg-green-100 text-green-800"
+                        ? "bg-[#D5848C] text-[#F4F6F7]"
                         : product.status === "In Progress"
-                          ? "bg-blue-100 text-blue-800"
-                          : "bg-gray-200 text-gray-800"
+                          ? "bg-[#6C8FA3] text-[#F4F6F7]"
+                          : "bg-[#D9DEE2] text-[#4A4F52]"
                     }`}
                   >
                     {product.status}
@@ -110,7 +110,7 @@ export default function Products() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-[#4A4F52] mb-6 leading-relaxed">
                   {product.description}
                 </p>
 
@@ -119,7 +119,7 @@ export default function Products() {
                   {product.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-sm px-3 py-1 bg-gray-200 text-gray-800 rounded-full"
+                      className="text-sm px-3 py-1 bg-[#D9DEE2] text-[#4A4F52] rounded-full"
                     >
                       {tag}
                     </span>
@@ -131,16 +131,16 @@ export default function Products() {
         </section>
 
         {/* Closing Message */}
-        <section className="bg-gray-50 rounded-lg p-12 text-center">
-          <p className="text-xl text-gray-700 leading-relaxed">
-            これからもどんどん更新ができるよう、成長していきます
+        <section className="bg-[#E9EEF0] rounded-lg p-12 text-center">
+          <p className="text-xl text-[#4A4F52] leading-relaxed">
+            Un roseau pensant
           </p>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-gray-600">
+      <footer className="border-t border-[#D9DEE2] mt-20">
+        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-[#4A4F52]">
           <p>&copy; 2024 Nakai Ryoka. All rights reserved.</p>
         </div>
       </footer>
