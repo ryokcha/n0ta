@@ -20,16 +20,16 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-[#F4F6F7]">
       {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2]">
+      <header className="border-b border-[#D9DEE2] backdrop-blur-md">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
             <h1 className="text-2xl font-bold text-[#6C8FA3] hover:opacity-80 transition-opacity">n0ta</h1>
           </Link>
-          <ul className="flex gap-8 items-center">
+          <ul className="flex gap-4 items-center">
             <li>
               <Link
                 href="/about"
-                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
+                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
               >
                 About
               </Link>
@@ -37,7 +37,7 @@ export default function Contact() {
             <li>
               <Link
                 href="/products"
-                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
+                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
               >
                 Products
               </Link>
@@ -45,12 +45,10 @@ export default function Contact() {
             <li>
               <Link
                 href="/contact"
-                className="text-[#6C8FA3] font-semibold hover:text-[#4A4F52] transition-colors"
+                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
               >
                 Contact
               </Link>
-            </li>
-            <li>
             </li>
           </ul>
         </nav>
@@ -88,20 +86,20 @@ export default function Contact() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-lg hover:border-[#D5848C] transition-colors group"
+                  className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-lg bg-white hover:bg-[#E5D5CE] hover:border-[#D5848C] transition-all duration-300 ease-out group"
                 >
-                  <div className="text-4xl group-hover:scale-110 transition-transform text-[#6C8FA3]">
+                  <div className="text-4xl group-hover:scale-110 transition-transform duration-300 text-[#6C8FA3]">
                     <IconComponent />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-[#6C8FA3]">
+                    <h4 className="text-lg font-semibold text-[#6C8FA3] group-hover:text-[#D5848C] transition-colors duration-300">
                       {link.name}
                     </h4>
-                    <p className="text-[#4A4F52]">
+                    <p className="text-[#4A4F52] group-hover:text-[#A0695F] transition-colors duration-300">
                       {link.url.replace("https://", "")}
                     </p>
                   </div>
-                  <span className="ml-auto text-[#4A4F52] group-hover:text-[#D5848C] transition-colors">
+                  <span className="ml-auto text-[#4A4F52] group-hover:text-[#D5848C] transition-all duration-300 transform group-hover:translate-x-1">
                     →
                   </span>
                 </a>
@@ -109,20 +107,20 @@ export default function Contact() {
               })}
               <a
                 href="mailto:922ryouka@gmail.com"
-                className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-lg hover:border-[#D5848C] transition-colors group"
+                className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-lg bg-white hover:bg-[#E5D5CE] hover:border-[#D5848C] transition-all duration-300 ease-out group"
               >
-                <div className="text-4xl group-hover:scale-110 transition-transform text-[#6C8FA3]">
+                <div className="text-4xl group-hover:scale-110 transition-transform duration-300 text-[#6C8FA3]">
                   <FaEnvelope />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-[#6C8FA3]">
+                  <h4 className="text-lg font-semibold text-[#6C8FA3] group-hover:text-[#D5848C] transition-colors duration-300">
                     Send a Message
                   </h4>
-                  <p className="text-[#4A4F52]">
+                  <p className="text-[#4A4F52] group-hover:text-[#A0695F] transition-colors duration-300">
                     お使いのメールクライアントが開きます
                   </p>
                 </div>
-                <span className="ml-auto text-[#4A4F52] group-hover:text-[#D5848C] transition-colors">
+                <span className="ml-auto text-[#4A4F52] group-hover:text-[#D5848C] transition-all duration-300 transform group-hover:translate-x-1">
                   →
                 </span>
               </a>

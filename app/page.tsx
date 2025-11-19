@@ -4,16 +4,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F4F6F7]">
       {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2]">
+      <header className="border-b border-[#D9DEE2] backdrop-blur-md">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
             <h1 className="text-2xl font-bold text-[#6C8FA3] hover:opacity-80 transition-opacity">n0ta</h1>
           </Link>
-          <ul className="flex gap-8 items-center">
+          <ul className="flex gap-4 items-center">
             <li>
               <Link
                 href="/about"
-                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
+                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
               >
                 About
               </Link>
@@ -21,7 +21,7 @@ export default function Home() {
             <li>
               <Link
                 href="/products"
-                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
+                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
               >
                 Products
               </Link>
@@ -29,7 +29,7 @@ export default function Home() {
             <li>
               <Link
                 href="/contact"
-                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
+                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
               >
                 Contact
               </Link>
