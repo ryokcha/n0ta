@@ -7,7 +7,7 @@ export default function Home() {
       <header className="border-b border-[#D9DEE2] backdrop-blur-md">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
-            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:opacity-80 transition-opacity">n0ta</h1>
+            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">n0ta</h1>
           </Link>
           <ul className="flex gap-4 items-center">
             <li>

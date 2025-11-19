@@ -16,7 +16,7 @@ export function Navigation({ currentPage }: NavigationProps) {
     <header className="border-b border-[#D9DEE2] dark:border-gray-800 backdrop-blur-md">
       <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
         <Link href="/">
-          <h1 className="text-2xl font-bold text-[#6C8FA3] dark:text-white hover:opacity-80 transition-opacity">
+          <h1 className="text-2xl font-bold text-[#6C8FA3] dark:text-white hover:text-[#D5848C] dark:hover:text-[#D5848C] transition-colors">
             n0ta
           </h1>
         </Link>
