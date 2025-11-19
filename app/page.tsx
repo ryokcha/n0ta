@@ -64,7 +64,7 @@ export default function Home() {
         </section>
 
         {/* Featured Section */}
-        <section className="mb-20">
+        <section className="mb-20 text-center">
           <h3 className="text-3xl font-bold text-black mb-4">
             Welcome
           </h3>
