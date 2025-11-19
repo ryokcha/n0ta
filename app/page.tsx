@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F4F6F7]">
       {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2] backdrop-blur-md">
+      <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
             <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">n0ta</h1>
@@ -50,13 +50,13 @@ export default function Home() {
           <div className="flex gap-4 justify-center">
             <Link
               href="/about"
-              className="px-8 py-3 bg-[#6C8FA3] text-[#F4F6F7] rounded-lg font-medium hover:bg-[#D5848C] transition-colors"
+              className="px-8 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#F4F6F7] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
             >
               About Me
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border-2 border-[#6C8FA3] text-[#6C8FA3] rounded-lg font-medium hover:bg-[#F7E3E5] transition-colors"
+              className="px-8 py-3 border-2 border-[#6C8FA3] text-[#6C8FA3] rounded-xl font-medium hover:bg-[#F7E3E5] hover:backdrop-blur-lg transition-colors"
             >
               Get In Touch
             </Link>

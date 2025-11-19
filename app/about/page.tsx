@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#F4F6F7]">
       {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2] backdrop-blur-md">
+      <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
             <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">n0ta</h1>
@@ -66,7 +66,7 @@ export default function About() {
               プロジェクトに取り組んでいないときは、新しいテクノロジーの探索、デザイントレンドの実験、そしてクリエイティブコミュニティへの貢献を楽しんでいます。
             </p>
           </div>
-          <div className="bg-gradient-to-br from-[#E9EEF0] to-[#D9DEE2] rounded-lg p-8 flex items-center justify-center min-h-80">
+          <div className="bg-gradient-to-br from-[#E9EEF0]/50 to-[#D9DEE2]/50 backdrop-blur-lg rounded-2xl p-8 flex items-center justify-center min-h-80">
             <div className="text-center">
               <div className="text-8xl mb-4">✨</div>
               <p className="text-[#4A4F52] font-medium">
@@ -82,7 +82,7 @@ export default function About() {
             Skills & Expertise
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#E9EEF0] p-6 rounded-lg">
+            <div className="bg-[#E9EEF0]/50 backdrop-blur-lg p-6 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-4">
                 Design
               </h4>
@@ -93,7 +93,7 @@ export default function About() {
                 <li>• Design Systems</li>
               </ul>
             </div>
-            <div className="bg-[#E9EEF0] p-6 rounded-lg">
+            <div className="bg-[#E9EEF0]/50 backdrop-blur-lg p-6 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-4">
                 Development
               </h4>

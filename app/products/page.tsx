@@ -1,41 +1,21 @@
 import Link from "next/link";
+import { products as allProducts } from "@/app/data/products";
 
+/**
+ * Products ページ
+ *
+ * プロダクト一覧を表示するページです。
+ * データ管理：app/data/products.ts で一元管理
+ * 詳細ページ：各プロダクトをクリックで /products/{id} に遷移
+ */
 export default function Products() {
-  const products = [
-    {
-      id: 1,
-      title: "Project Alpha",
-      description: "レスポンシブデザインとユーザー中心のアプローチを展示している最新のWebアプリケーション。",
-      tags: ["React", "Next.js", "Tailwind CSS"],
-      status: "Completed",
-    },
-    {
-      id: 2,
-      title: "Design System",
-      description: "再利用可能なコンポーネントとデザインガイドラインを備えた包括的なデザインシステム。",
-      tags: ["UI/UX", "Design", "Documentation"],
-      status: "Completed",
-    },
-    {
-      id: 3,
-      title: "Mobile App",
-      description: "直感的なインターフェースとスムーズなインタラクションを備えたクロスプラットフォームモバイルアプリケーション。",
-      tags: ["Mobile", "UI Design", "Development"],
-      status: "In Progress",
-    },
-    {
-      id: 4,
-      title: "E-commerce Platform",
-      description: "最新のフロントエンドとロバストなバックエンドを備えたフルスタックEコマースソリューション。",
-      tags: ["Full-Stack", "React", "Node.js"],
-      status: "Planning",
-    },
-  ].sort((a, b) => b.id - a.id);
+  // ID の降順（新しい順）でソート
+  const products = allProducts.sort((a, b) => b.id - a.id);
 
   return (
     <div className="min-h-screen bg-[#F4F6F7]">
       {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2] backdrop-blur-md">
+      <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
             <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">n0ta</h1>
@@ -85,51 +65,54 @@ export default function Products() {
         <section className="mb-20">
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product) => (
-              <div
+              <Link
                 key={product.id}
-                className="bg-[#E9EEF0] rounded-lg p-8 hover:shadow-lg transition-shadow"
+                href={`/products/${product.id}`}
+                className="block"
               >
-                {/* Project Header */}
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-[#6C8FA3]">
-                    {product.title}
-                  </h3>
-                  <span
-                    className={`text-sm font-medium px-3 py-1 rounded-full ${
-                      product.status === "Completed"
-                        ? "bg-[#D5848C] text-[#F4F6F7]"
-                        : product.status === "In Progress"
-                          ? "bg-[#6C8FA3] text-[#F4F6F7]"
-                          : "bg-[#D9DEE2] text-[#4A4F52]"
-                    }`}
-                  >
-                    {product.status}
-                  </span>
-                </div>
-
-                {/* Description */}
-                <p className="text-[#4A4F52] mb-6 leading-relaxed">
-                  {product.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {product.tags.map((tag) => (
+                <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-8 hover:shadow-lg transition-shadow cursor-pointer h-full hover:bg-[#E9EEF0]/70">
+                  {/* Project Header */}
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-[#6C8FA3]">
+                      {product.title}
+                    </h3>
                     <span
-                      key={tag}
-                      className="text-sm px-3 py-1 bg-[#D9DEE2] text-[#4A4F52] rounded-full"
+                      className={`text-sm font-medium px-3 py-1 rounded-full ${
+                        product.status === "Completed"
+                          ? "bg-[#D5848C] text-[#F4F6F7]"
+                          : product.status === "In Progress"
+                            ? "bg-[#6C8FA3] text-[#F4F6F7]"
+                            : "bg-[#D9DEE2] text-[#4A4F52]"
+                      }`}
                     >
-                      {tag}
+                      {product.status}
                     </span>
-                  ))}
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-[#4A4F52] mb-6 leading-relaxed">
+                    {product.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {product.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-sm px-3 py-1 bg-[#D9DEE2] text-[#4A4F52] rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
 
         {/* Closing Message */}
-        <section className="bg-[#E9EEF0] rounded-lg p-12 text-center">
+        <section className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
           <p className="text-xl text-[#4A4F52] leading-relaxed">
             Un roseau pensant
           </p>
