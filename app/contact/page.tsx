@@ -32,7 +32,7 @@ export default function Contact() {
 
         {/* Contact Information */}
         <section className="mb-16">
-          <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-12">
+          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-12">
             <h3 className="text-3xl font-bold text-[#6C8FA3] mb-8">
               Connect With Me
             </h3>

@@ -147,7 +147,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
         {/* Full Description */}
         <section className="mb-12">
-          <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-[#6C8FA3] mb-4">
               プロジェクト概要
             </h2>
@@ -160,7 +160,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         {/* Project Info Grid */}
         <section className="mb-12 grid md:grid-cols-2 gap-8">
           {/* Background */}
-          <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-[#6C8FA3] mb-4">
               作成背景
             </h3>
@@ -170,7 +170,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
           </div>
 
           {/* Team & Role */}
-          <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
               プロジェクト情報
             </h3>
@@ -193,7 +193,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
         {/* Technologies */}
         <section className="mb-12">
-          <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
               使用技術
             </h3>
@@ -212,7 +212,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
         {/* Tags */}
         <section className="mb-12">
-          <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
               タグ
             </h3>

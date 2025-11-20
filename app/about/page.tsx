@@ -29,7 +29,7 @@ export default function About() {
               プロジェクトに取り組んでいないときは、新しいテクノロジーの探索、デザイントレンドの実験、そしてクリエイティブコミュニティへの貢献を楽しんでいます。
             </p>
           </div>
-          <div className="bg-gradient-to-br from-[#E9EEF0]/50 to-[#D9DEE2]/50 backdrop-blur-lg rounded-2xl p-8 flex items-center justify-center min-h-80">
+          <div className="bg-gradient-to-br from-[#fcf7f8]/50 to-[#D9DEE2]/50 backdrop-blur-lg rounded-2xl p-8 flex items-center justify-center min-h-80">
             <div className="text-center">
               <div className="text-8xl mb-4">✨</div>
               <p className="text-[#4A4F52] font-medium">
@@ -45,7 +45,7 @@ export default function About() {
             Skills & Expertise
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#E9EEF0]/50 backdrop-blur-lg p-6 rounded-2xl">
+            <div className="bg-[#fcf7f8]/50 backdrop-blur-lg p-6 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-4">
                 Design
               </h4>
@@ -56,7 +56,7 @@ export default function About() {
                 <li>• Design Systems</li>
               </ul>
             </div>
-            <div className="bg-[#E9EEF0]/50 backdrop-blur-lg p-6 rounded-2xl">
+            <div className="bg-[#fcf7f8]/50 backdrop-blur-lg p-6 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-4">
                 Development
               </h4>

@@ -35,7 +35,7 @@ export default function Products() {
                 href={`/products/${product.id}`}
                 className="block"
               >
-                <div className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-2xl p-8 hover:shadow-lg transition-shadow cursor-pointer h-full hover:bg-[#E9EEF0]/70">
+                <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8 hover:shadow-lg transition-shadow cursor-pointer h-full hover:bg-[#fcf7f8]/70">
                   {/* Project Header */}
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-xl font-bold text-[#6C8FA3]">
@@ -77,7 +77,7 @@ export default function Products() {
         </section>
 
         {/* Closing Message */}
-        <section className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
+        <section className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
           <p className="text-xl text-[#6C8FA3] leading-relaxed">
             Un roseau pensant
           </p>
