@@ -13,7 +13,7 @@ export function Navigation({ currentPage }: NavigationProps) {
   ] as const;
 
   return (
-    <header className="border-b border-[#D9DEE2] dark:border-gray-800 backdrop-blur-xl">
+    <header className="rounded-b-3xl bg-[#F4F6F7]/80 backdrop-blur-xl dark:bg-gray-900/80">
       <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
         <Link href="/">
           <h1 className="text-2xl font-bold text-[#6C8FA3] dark:text-white hover:text-[#D5848C] dark:hover:text-[#D5848C] transition-colors">

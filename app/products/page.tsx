@@ -13,42 +13,7 @@ export default function Products() {
   const products = allProducts.sort((a, b) => b.id - a.id);
 
   return (
-    <div className="min-h-screen bg-[#F4F6F7]">
-      {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
-        <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-          <Link href="/">
-            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">n0ta</h1>
-          </Link>
-          <ul className="flex gap-4 items-center">
-            <li>
-              <Link
-                href="/about"
-                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products"
-                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
-              >
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="px-6 py-2 bg-[#6C8FA3] text-[#F4F6F7] rounded-full font-medium hover:bg-[#D5848C] transition-colors"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
+    <>
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-20">
         {/* Page Title */}
@@ -113,18 +78,11 @@ export default function Products() {
 
         {/* Closing Message */}
         <section className="bg-[#E9EEF0]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
-          <p className="text-xl text-[#4A4F52] leading-relaxed">
+          <p className="text-xl text-[#6C8FA3] leading-relaxed">
             Un roseau pensant
           </p>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[#D9DEE2] mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-[#4A4F52]">
-          <p>&copy; 2024 Nakai Ryoka. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
