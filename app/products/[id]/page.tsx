@@ -36,7 +36,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#F4F6F7]">
+      <div className="min-h-screen bg-[#c8d8db]">
         <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
           <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
             <Link href="/">
@@ -57,7 +57,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             </p>
             <Link
               href="/products"
-              className="inline-block px-8 py-3 bg-[#6C8FA3] text-[#F4F6F7] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+              className="inline-block px-8 py-3 bg-[#6C8FA3] text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
             >
               プロダクト一覧に戻る
             </Link>
@@ -74,13 +74,13 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   };
 
   const statusTextColor = {
-    Completed: "text-[#F4F6F7]",
-    "In Progress": "text-[#F4F6F7]",
+    Completed: "text-[#c8d8db]",
+    "In Progress": "text-[#c8d8db]",
     Planning: "text-[#4A4F52]",
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F6F7]">
+    <div className="min-h-screen bg-[#c8d8db]">
       {/* Header/Navigation */}
       <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
@@ -127,7 +127,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               href={product.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#F4F6F7] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
             >
               <svg
                 className="w-5 h-5"
@@ -220,7 +220,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               {product.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-[#6C8FA3] text-[#F4F6F7] rounded-full text-sm font-medium"
+                  className="px-3 py-1 bg-[#6C8FA3] text-[#c8d8db] rounded-full text-sm font-medium"
                 >
                   {tag}
                 </span>
@@ -233,7 +233,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         <section className="mt-16 pt-12 border-t border-[#D9DEE2]">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#F4F6F7] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
           >
             <span>←</span>
             <span>プロダクト一覧に戻る</span>

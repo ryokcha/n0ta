@@ -21,7 +21,7 @@ export function Navigation() {
             <li key={link.id}>
               <Link
                 href={link.href}
-                className="px-6 py-2 rounded-full font-medium transition-colors bg-[#567282] text-[#F4F6F7] hover:bg-[#D5848C]"
+                className="px-6 py-2 rounded-full font-medium transition-colors bg-[#567282] text-[#c8d8db] hover:bg-[#D5848C]"
               >
                 {link.label}
               </Link>

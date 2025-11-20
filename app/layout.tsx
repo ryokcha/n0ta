@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F4F6F7]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#c8d8db]`}
       >
         <Navigation />
         <main className="min-h-screen">

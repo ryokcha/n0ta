@@ -15,7 +15,7 @@ export default function Home() {
           <div className="flex gap-4 justify-center">
             <Link
               href="/about"
-              className="px-8 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#F4F6F7] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+              className="px-8 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
             >
               About Me
             </Link>

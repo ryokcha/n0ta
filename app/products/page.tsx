@@ -44,9 +44,9 @@ export default function Products() {
                     <span
                       className={`text-sm font-medium px-3 py-1 rounded-full ${
                         product.status === "Completed"
-                          ? "bg-[#D5848C] text-[#F4F6F7]"
+                          ? "bg-[#D5848C] text-[#c8d8db]"
                           : product.status === "In Progress"
-                            ? "bg-[#6C8FA3] text-[#F4F6F7]"
+                            ? "bg-[#6C8FA3] text-[#c8d8db]"
                             : "bg-[#D9DEE2] text-[#4A4F52]"
                       }`}
                     >
