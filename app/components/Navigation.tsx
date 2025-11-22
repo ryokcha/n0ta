@@ -11,7 +11,7 @@ export function Navigation() {
     <header className="rounded-b-3xl bg-[#567282]/80 backdrop-blur-xl dark:bg-[#567282]/80">
       <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
         <Link href="/">
-          <h1 className="text-2xl font-bold text-[#c8d8db] dark:text-[#c8d8db] hover:text-[#D5848C] dark:hover:text-[#D5848C] transition-colors">
+          <h1 className="logo text-2xl font-bold text-[#c8d8db] dark:text-[#c8d8db] hover:text-[#D5848C] dark:hover:text-[#D5848C] transition-colors">
             n0ta
           </h1>
         </Link>

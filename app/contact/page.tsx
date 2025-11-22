@@ -1,11 +1,11 @@
-import { FaXTwitter, FaGithub, FaEnvelope } from "react-icons/fa6";
+import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const socialLinks = [
     {
       name: "Twitter",
-      url: "https://x.com/Nakai_0r314",
-      icon: FaXTwitter,
+      url: "https://twitter.com/Nakai_0r314",
+      icon: FaTwitter,
       color: "hover:text-black",
     },
     {

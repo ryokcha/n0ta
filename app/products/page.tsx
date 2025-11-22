@@ -78,9 +78,9 @@ export default function Products() {
 
         {/* Closing Message */}
         <section className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
-          <p className="text-xl text-[#6C8FA3] leading-relaxed">
+          <h2 className="text-4xl text-[#6C8FA3] leading-relaxed">
             Un roseau pensant
-          </p>
+          </h2>
         </section>
       </main>
     </>
