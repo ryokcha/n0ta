@@ -1,45 +1,6 @@
-import Link from "next/link";
-
 export default function About() {
   return (
-    <div className="min-h-screen bg-[#F4F6F7]">
-      {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2]">
-        <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-          <Link href="/">
-            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:opacity-80 transition-opacity">n0ta</h1>
-          </Link>
-          <ul className="flex gap-8 items-center">
-            <li>
-              <Link
-                href="/about"
-                className="text-[#6C8FA3] font-semibold hover:text-[#4A4F52] transition-colors"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products"
-                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
-              >
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="text-[#6C8FA3] hover:text-[#4A4F52] transition-colors"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
+    <>
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-20">
         {/* Page Title */}
@@ -48,7 +9,7 @@ export default function About() {
             About Me
           </h2>
           <p className="text-xl text-[#4A4F52]">
-            Learning and growing through creative work.
+            Learning and growing.
           </p>
         </section>
 
@@ -59,7 +20,7 @@ export default function About() {
               Nakai Ryoka
             </h3>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
-              美しく機能的なデジタル体験を構築することに情熱を持つクリエイティブプロフェッショナルです。デザインと開発に対する強い関心を持ちながら、美学的に優れ、ユーザーに焦点を当てた作品を作成することを目指しています。
+              UIデザインが大好きです。
             </p>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
               クリエイティブな分野での経験を通じて、継続的な学習と成長の重要性を学びました。協力の力を信じており、思慮深い実行を通じてアイデアを現実のものにすることに力を入れています。
@@ -68,7 +29,7 @@ export default function About() {
               プロジェクトに取り組んでいないときは、新しいテクノロジーの探索、デザイントレンドの実験、そしてクリエイティブコミュニティへの貢献を楽しんでいます。
             </p>
           </div>
-          <div className="bg-gradient-to-br from-[#E9EEF0] to-[#D9DEE2] rounded-lg p-8 flex items-center justify-center min-h-80">
+          <div className="bg-gradient-to-br from-[#fcf7f8]/50 to-[#D9DEE2]/50 backdrop-blur-lg rounded-2xl p-8 flex items-center justify-center min-h-80">
             <div className="text-center">
               <div className="text-8xl mb-4">✨</div>
               <p className="text-[#4A4F52] font-medium">
@@ -84,7 +45,7 @@ export default function About() {
             Skills & Expertise
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#E9EEF0] p-6 rounded-lg">
+            <div className="bg-[#fcf7f8]/50 backdrop-blur-lg p-6 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-4">
                 Design
               </h4>
@@ -95,7 +56,7 @@ export default function About() {
                 <li>• Design Systems</li>
               </ul>
             </div>
-            <div className="bg-[#E9EEF0] p-6 rounded-lg">
+            <div className="bg-[#fcf7f8]/50 backdrop-blur-lg p-6 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-4">
                 Development
               </h4>
@@ -136,13 +97,6 @@ export default function About() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[#D9DEE2] mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-[#4A4F52]">
-          <p>&copy; 2025 Nakai Ryoka. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
