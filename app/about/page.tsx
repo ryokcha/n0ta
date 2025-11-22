@@ -9,7 +9,7 @@ export default function About() {
             About Me
           </h2>
           <p className="text-xl text-[#4A4F52]">
-            Learning and growing through creative work.
+            Learning and growing.
           </p>
         </section>
 
@@ -20,7 +20,7 @@ export default function About() {
               Nakai Ryoka
             </h3>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
-              美しく機能的なデジタル体験を構築することに情熱を持つクリエイティブプロフェッショナルです。デザインと開発に対する強い関心を持ちながら、美学的に優れ、ユーザーに焦点を当てた作品を作成することを目指しています。
+              UIデザインが大好きです。
             </p>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
               クリエイティブな分野での経験を通じて、継続的な学習と成長の重要性を学びました。協力の力を信じており、思慮深い実行を通じてアイデアを現実のものにすることに力を入れています。

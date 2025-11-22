@@ -10,7 +10,7 @@ export default function Home() {
             Nakai Ryoka
           </h2>
           <p className="text-xl text-[#4A4F52] mb-8">
-            Portfolio & Creative Work
+            Portfolio
           </p>
           <div className="flex gap-4 justify-center">
             <Link
@@ -34,8 +34,10 @@ export default function Home() {
             Welcome
           </h3>
           <p className="text-[#4A4F52] mb-4 leading-relaxed">
-            I am Nakai Ryoka, a creative professional passionate about building
-            beautiful and functional digital experiences.
+            ポートフォリオへようこそ。
+            ここでは私の持っているスキルやプロダクトから個人的な趣味に至るまで、
+            幅広く自己紹介をしています。
+            もっと私について知っていただけると嬉しいです。
           </p>
           <p className="text-[#4A4F52] leading-relaxed">
             Explore my portfolio to see my recent projects and works. Feel free
