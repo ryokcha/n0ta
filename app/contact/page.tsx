@@ -26,7 +26,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-[#4A4F52]">
-            Feel free to reach out and connect with me on social media.
+            どんなご用件でもお気軽にご連絡ください。
           </p>
         </section>
 
@@ -36,9 +36,6 @@ export default function Contact() {
             <h3 className="text-3xl font-bold text-[#6C8FA3] mb-8">
               Connect With Me
             </h3>
-            <p className="text-lg text-[#4A4F52] mb-12 leading-relaxed">
-              新しいプロジェクトやコラボレーションについて常に興味があります。何か質問がある場合やご挨拶をしたい場合は、下記のリンクからお気軽にご連絡ください。
-            </p>
 
             {/* Social Links */}
             <div className="space-y-4">
