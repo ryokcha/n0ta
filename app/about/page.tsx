@@ -192,7 +192,7 @@ export default function About() {
               </h4>
               {loading ? (
                 <div className="flex items-center justify-center py-8">
-                  <p className="text-[#4A4F52]">GitHub データを読み込み中...</p>
+                  <p className="text-[#4A4F52]">Now Loading</p>
                 </div>
               ) : codingLanguages.length > 0 ? (
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-6">
@@ -214,7 +214,7 @@ export default function About() {
               </h4>
               {loading ? (
                 <div className="flex items-center justify-center py-8">
-                  <p className="text-[#4A4F52]">GitHub データを読み込み中...</p>
+                  <p className="text-[#4A4F52]">Now Loading</p>
                 </div>
               ) : githubLanguages.length > 0 ? (
                 <div className="space-y-3">
