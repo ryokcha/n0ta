@@ -130,7 +130,7 @@ export default function About() {
   return (
     <>
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto px-6 py-20">
         {/* Page Title */}
         <section className="mb-16">
           <h2 className="text-5xl font-bold text-[#6C8FA3] mb-8">
@@ -245,7 +245,7 @@ export default function About() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

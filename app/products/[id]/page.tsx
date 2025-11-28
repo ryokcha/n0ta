@@ -36,33 +36,19 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#c8d8db]">
-        <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
-          <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-            <Link href="/">
-              <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">
-                n0ta
-              </h1>
-            </Link>
-          </nav>
-        </header>
-
-        <main className="max-w-4xl mx-auto px-6 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-[#6C8FA3] mb-4">
-              プロダクトが見つかりません
-            </h1>
-            <p className="text-lg text-[#4A4F52] mb-8">
-              申し訳ありません。このプロダクトは存在しません。
-            </p>
-            <Link
-              href="/products"
-              className="inline-block px-8 py-3 bg-[#6C8FA3] text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
-            >
-              プロダクト一覧に戻る
-            </Link>
-          </div>
-        </main>
+      <div className="max-w-4xl mx-auto px-6 py-20 text-center">
+        <h1 className="text-4xl font-bold text-[#6C8FA3] mb-4">
+          プロダクトが見つかりません
+        </h1>
+        <p className="text-lg text-[#4A4F52] mb-8">
+          申し訳ありません。このプロダクトは存在しません。
+        </p>
+        <Link
+          href="/products"
+          className="inline-block px-8 py-3 bg-[#6C8FA3] text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+        >
+          プロダクト一覧に戻る
+        </Link>
       </div>
     );
   }
@@ -80,27 +66,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#c8d8db]">
-      {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
-        <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-          <Link href="/">
-            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">
-              n0ta
-            </h1>
-          </Link>
-          <Link
-            href="/products"
-            className="text-[#6C8FA3] hover:text-[#D5848C] transition-colors flex items-center gap-2"
-          >
-            <span>←</span>
-            <span>プロダクト一覧</span>
-          </Link>
-        </nav>
-      </header>
-
+    <>
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto px-6 py-20">
         {/* Product Header */}
         <section className="mb-12">
           <div className="flex justify-between items-start mb-6">
@@ -239,14 +207,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <span>プロダクト一覧に戻る</span>
           </Link>
         </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[#D9DEE2] mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-[#4A4F52]">
-          <p>&copy; 2025 Nakai Ryoka. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }
