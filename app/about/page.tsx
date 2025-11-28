@@ -148,7 +148,7 @@ export default function About() {
               Nakai Ryoka
             </h3>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
-              UIデザインを考えることが大好きです。
+              UI/UXを考えることが大好きです。
             </p>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
               開発の経験は少ないながらに様々なことに関心を持っているため、学習と挑戦を続けています。現在はフロントエンド開発を中心に学習を続けていますが、将来的にはフルスタックエンジニアを目指しています。
@@ -242,33 +242,6 @@ export default function About() {
                   <p className="text-[#4A4F52]">GitHub データの取得に失敗しました</p>
                 </div>
               )}
-            </div>
-          </div>
-        </section>
-
-        {/* Experience Section */}
-        <section>
-          <h3 className="text-3xl font-bold text-[#6C8FA3] mb-8">
-            Experience
-          </h3>
-          <div className="space-y-8">
-            <div className="border-l-4 border-[#D5848C] pl-6 py-2">
-              <h4 className="text-xl font-semibold text-[#6C8FA3]">
-                Creative Professional
-              </h4>
-              <p className="text-[#4A4F52]">2023 - 現在</p>
-              <p className="text-[#4A4F52] mt-2">
-                ユーザー体験と最新テクノロジーに焦点を当てた、デジタルソリューションの開発とデザインを行っています。
-              </p>
-            </div>
-            <div className="border-l-4 border-[#D5848C] pl-6 py-2">
-              <h4 className="text-xl font-semibold text-[#6C8FA3]">
-                成長と学習
-              </h4>
-              <p className="text-[#4A4F52]">継続中</p>
-              <p className="text-[#4A4F52] mt-2">
-                業界トレンドに対応するため、スキルを継続的に向上させ、新しいテクノロジーを探索しています。
-              </p>
             </div>
           </div>
         </section>
