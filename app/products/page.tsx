@@ -58,18 +58,6 @@ export default function Products() {
                   <p className="text-[#4A4F52] mb-6 leading-relaxed">
                     {product.description}
                   </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {product.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-sm px-3 py-1 bg-[#D9DEE2] text-[#4A4F52] rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </Link>
             ))}

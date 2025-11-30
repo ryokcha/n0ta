@@ -17,7 +17,6 @@ export interface Product {
   role: string; // このプロジェクトでの自分の担当箇所
   technologies: string[]; // 使用した技術スタック
   githubUrl?: string; // GitHubリンク（オプション）
-  tags: string[]; // タグ（複数選択可）
   status: "Completed" | "In Progress" | "Planning"; // プロジェクトのステータス
 }
 
@@ -38,7 +37,6 @@ export interface Product {
  *   role: "担当箇所（例：フロントエンド開発、デザイン等）",
  *   technologies: ["React", "Next.js", "TypeScript"],
  *   githubUrl: "https://github.com/ryokcha/project-name",
- *   tags: ["React", "Web"],
  *   status: "In Progress"
  * }
  */
@@ -58,7 +56,6 @@ export const products: Product[] = [
     role: "フロントエンド開発、UI/UXデザイン",
     technologies: ["Next.js", "TypeScript", "GitHubOAuth", "Vercel"],
     githubUrl: "https://github.com/dokkiitech/Discordbot-maker",
-    tags: ["React", "Next.js", "Tailwind CSS"],
     status: "Completed",
   },
   // ========================================
@@ -75,7 +72,6 @@ export const products: Product[] = [
     role: "デザインシステム設計、Figmaドキュメント作成、コンポーネント実装",
     technologies: ["Figma", "React", "Storybook", "TypeScript", "CSS-in-JS"],
     githubUrl: "https://github.com/ryokcha/design-system",
-    tags: ["UI/UX", "Design", "Documentation"],
     status: "Completed",
   },
   // ========================================
@@ -91,7 +87,6 @@ export const products: Product[] = [
     teamSize: 2,
     role: "UI/UXデザイン、アプリケーション開発、ユーザーテスト",
     technologies: ["React Native", "Expo", "TypeScript", "Redux", "Firebase"],
-    tags: ["Mobile", "UI Design", "Development"],
     status: "In Progress",
   },
   // ========================================
@@ -108,7 +103,6 @@ export const products: Product[] = [
     role: "アーキテクチャ設計、フロントエンド開発、バックエンドAPI設計",
     technologies: ["Next.js", "Node.js", "Express", "PostgreSQL", "Stripe", "Docker"],
     githubUrl: "https://github.com/ryokcha/ecommerce-platform",
-    tags: ["Full-Stack", "React", "Node.js"],
     status: "Planning",
   },
 

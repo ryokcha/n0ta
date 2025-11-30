@@ -21,7 +21,6 @@ import { products } from "@/app/data/products";
  * - 作成背景（background）
  * - 制作人数、担当箇所
  * - 使用技術
- * - タグ
  * - GitHub リンク
  */
 
@@ -172,25 +171,6 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                   className="px-4 py-2 bg-[#D9DEE2] text-[#4A4F52] rounded-full text-sm font-medium"
                 >
                   {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Tags */}
-        <section className="mb-12">
-          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
-              タグ
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {product.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-[#6C8FA3] text-[#c8d8db] rounded-full text-sm font-medium"
-                >
-                  {tag}
                 </span>
               ))}
             </div>
