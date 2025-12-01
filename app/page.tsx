@@ -1,21 +1,23 @@
 import Link from "next/link";
+import { DotsBackground } from "@/app/components/DotsBackground";
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <main className="h-screen flex items-center justify-center px-6">
-        <section className="text-center">
+      <main className="h-screen flex items-center justify-center px-6 relative overflow-hidden">
+        <DotsBackground />
+        <section className="text-center relative z-10 bg-white/30 backdrop-blur-md rounded-3xl px-12 py-16 w-full md:w-[70%]">
           <h2 className="text-7xl font-bold text-[#6C8FA3] mb-8">
             Nakai Ryoka
           </h2>
           <p className="text-3xl text-[#4A4F52] mb-12">
             Portfolio
           </p>
-          <div className="flex gap-6 justify-center">
+          <div className="flex gap-6 justify-center flex-wrap">
             <Link
               href="/about"
-              className="px-10 py-4 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium text-lg hover:bg-[#D5848C] transition-colors"
+              className="px-10 py-4 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium text-lg hover:bg-[#567282] transition-colors"
             >
               About Me
             </Link>

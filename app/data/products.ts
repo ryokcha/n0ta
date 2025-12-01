@@ -88,7 +88,7 @@ export const products: Product[] = [
     teamSize: 1,
     role: "全体の設計とコンポーネント作成",
     technologies: ["Figma"],
-    status: "planning",
+    status: "Planning",
   },
 
 ];
