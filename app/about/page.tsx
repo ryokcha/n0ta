@@ -158,21 +158,14 @@ export default function About() {
               趣味は写真撮影やダンス。開発以外では英語を中心とした語学とビジネスについて学習しています。
             </p>
           </div>
-          <div className="bg-gradient-to-br from-[#fcf7f8]/50 to-[#D9DEE2]/50 backdrop-blur-lg rounded-2xl p-8 flex items-center justify-center min-h-80">
-            <div className="text-center">
-              <div className="mb-4">
-                <Image
-                  src="/images/plofile.png"
-                  alt="Nakai Ryoka"
-                  width={192}
-                  height={192}
-                  className="rounded-lg object-cover"
-                />
-              </div>
-              <p className="text-[#4A4F52] font-medium">
-                Nakai Ryoka
-              </p>
-            </div>
+          <div className="flex items-center justify-center">
+            <Image
+              src="/images/plofile.png"
+              alt="Nakai Ryoka"
+              width={280}
+              height={280}
+              className="rounded-lg object-cover"
+            />
           </div>
         </section>
 
