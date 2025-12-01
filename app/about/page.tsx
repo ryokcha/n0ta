@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   SiReact,
   SiTypescript,
@@ -159,7 +160,15 @@ export default function About() {
           </div>
           <div className="bg-gradient-to-br from-[#fcf7f8]/50 to-[#D9DEE2]/50 backdrop-blur-lg rounded-2xl p-8 flex items-center justify-center min-h-80">
             <div className="text-center">
-              <div className="text-8xl mb-4">✨</div>
+              <div className="mb-4">
+                <Image
+                  src="/images/plofile.png"
+                  alt="Nakai Ryoka"
+                  width={192}
+                  height={192}
+                  className="rounded-lg object-cover"
+                />
+              </div>
               <p className="text-[#4A4F52] font-medium">
                 Nakai Ryoka
               </p>
