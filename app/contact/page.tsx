@@ -38,53 +38,82 @@ export default function Contact() {
             </h3>
 
             {/* Social Links */}
-            <div className="space-y-4">
-              {socialLinks.map((link) => {
-                const IconComponent = link.icon;
-                return (
+            <div className="space-y-4 md:space-y-4">
+              {/* PC版：カード型 */}
+              <div className="hidden md:space-y-4 md:block">
+                {socialLinks.map((link) => {
+                  const IconComponent = link.icon;
+                  return (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-2xl bg-white/50 backdrop-blur-lg hover:bg-[#E5D5CE] hover:border-[#D5848C] transition-all duration-300 ease-out group"
+                  >
+                    <div className="text-4xl group-hover:scale-110 transition-transform duration-300 text-[#6C8FA3]">
+                      <IconComponent />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-[#6C8FA3] group-hover:text-[#D5848C] transition-colors duration-300">
+                        {link.name}
+                      </h4>
+                      <p className="text-[#4A4F52] group-hover:text-[#A0695F] transition-colors duration-300">
+                        {link.url.replace("https://", "")}
+                      </p>
+                    </div>
+                    <span className="ml-auto text-[#4A4F52] group-hover:text-[#D5848C] transition-all duration-300 transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
+                  );
+                })}
                 <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:922ryouka@gmail.com"
                   className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-2xl bg-white/50 backdrop-blur-lg hover:bg-[#E5D5CE] hover:border-[#D5848C] transition-all duration-300 ease-out group"
                 >
                   <div className="text-4xl group-hover:scale-110 transition-transform duration-300 text-[#6C8FA3]">
-                    <IconComponent />
+                    <FaEnvelope />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-[#6C8FA3] group-hover:text-[#D5848C] transition-colors duration-300">
-                      {link.name}
+                      Send a Message
                     </h4>
                     <p className="text-[#4A4F52] group-hover:text-[#A0695F] transition-colors duration-300">
-                      {link.url.replace("https://", "")}
+                      お使いのメールクライアントが開きます
                     </p>
                   </div>
                   <span className="ml-auto text-[#4A4F52] group-hover:text-[#D5848C] transition-all duration-300 transform group-hover:translate-x-1">
                     →
                   </span>
                 </a>
-                );
-              })}
-              <a
-                href="mailto:922ryouka@gmail.com"
-                className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-2xl bg-white/50 backdrop-blur-lg hover:bg-[#E5D5CE] hover:border-[#D5848C] transition-all duration-300 ease-out group"
-              >
-                <div className="text-4xl group-hover:scale-110 transition-transform duration-300 text-[#6C8FA3]">
+              </div>
+
+              {/* モバイル版：アイコンのみ */}
+              <div className="md:hidden flex items-center justify-center gap-6">
+                {socialLinks.map((link) => {
+                  const IconComponent = link.icon;
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-4xl text-[#6C8FA3] hover:text-[#D5848C] hover:scale-110 transition-all duration-300"
+                      aria-label={link.name}
+                    >
+                      <IconComponent />
+                    </a>
+                  );
+                })}
+                <a
+                  href="mailto:922ryouka@gmail.com"
+                  className="text-4xl text-[#6C8FA3] hover:text-[#D5848C] hover:scale-110 transition-all duration-300"
+                  aria-label="Send a Message"
+                >
                   <FaEnvelope />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-[#6C8FA3] group-hover:text-[#D5848C] transition-colors duration-300">
-                    Send a Message
-                  </h4>
-                  <p className="text-[#4A4F52] group-hover:text-[#A0695F] transition-colors duration-300">
-                    お使いのメールクライアントが開きます
-                  </p>
-                </div>
-                <span className="ml-auto text-[#4A4F52] group-hover:text-[#D5848C] transition-all duration-300 transform group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </section>
