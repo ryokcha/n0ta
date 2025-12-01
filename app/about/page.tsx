@@ -145,9 +145,12 @@ export default function About() {
         {/* Profile Section */}
         <section className="mb-16 grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h3 className="text-3xl font-bold text-[#6C8FA3] mb-6">
+            <h3 className="text-3xl font-bold text-[#6C8FA3] mb-2">
               Nakai Ryoka
             </h3>
+            <p className="text-lg text-[#6C8FA3] mb-6">
+              中井涼日
+            </p>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
               UI/UXを考えることが大好きです。
             </p>
