@@ -65,8 +65,8 @@ export default function Products() {
         </section>
 
         {/* Closing Message */}
-        <section className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
-          <h2 className="text-4xl text-[#6C8FA3] leading-relaxed" style={{ fontFamily: "var(--font-cormorant-garamond)" }}>
+        <section className="bg-[#D5848C]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
+          <h2 className="text-6xl font-bold text-[#6C8FA3] leading-relaxed" style={{ fontFamily: "var(--font-cormorant-garamond)" }}>
             Un roseau pensant
           </h2>
         </section>
