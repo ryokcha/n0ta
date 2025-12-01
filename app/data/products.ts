@@ -17,6 +17,7 @@ export interface Product {
   role: string; // このプロジェクトでの自分の担当箇所
   technologies: string[]; // 使用した技術スタック
   githubUrl?: string; // GitHubリンク（オプション）
+  images?: string[]; // プロダクトの画像パス配列（オプション）
   status: "Completed" | "In Progress" | "Planning"; // プロジェクトのステータス
 }
 
@@ -42,7 +43,7 @@ export interface Product {
  */
 export const products: Product[] = [
   // ========================================
-  // プロダクト 1: Project Alpha
+  // プロダクト 1: Discord Bot Maker
   // ========================================
   // 一覧ページに表示される順序：ID の降順（新しい順）
   // 詳細ページURL: /products/1
