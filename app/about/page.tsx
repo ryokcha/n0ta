@@ -164,7 +164,7 @@ export default function About() {
               alt="Nakai Ryoka"
               width={280}
               height={280}
-              className="rounded-lg object-cover"
+              className="rounded-lg object-cover shadow-2xl"
             />
           </div>
         </section>
