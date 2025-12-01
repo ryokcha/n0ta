@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/app/data/products";
 
 /**
@@ -21,48 +22,41 @@ import { products } from "@/app/data/products";
  * - 作成背景（background）
  * - 制作人数、担当箇所
  * - 使用技術
- * - タグ
  * - GitHub リンク
  */
 
 interface ProductDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const product = products.find((p) => p.id === parseInt(params.id));
+export function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id.toString(),
+  }));
+}
+
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
+  const { id: idString } = await params;
+  const id = parseInt(idString, 10);
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#c8d8db]">
-        <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
-          <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-            <Link href="/">
-              <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">
-                n0ta
-              </h1>
-            </Link>
-          </nav>
-        </header>
-
-        <main className="max-w-4xl mx-auto px-6 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-[#6C8FA3] mb-4">
-              プロダクトが見つかりません
-            </h1>
-            <p className="text-lg text-[#4A4F52] mb-8">
-              申し訳ありません。このプロダクトは存在しません。
-            </p>
-            <Link
-              href="/products"
-              className="inline-block px-8 py-3 bg-[#6C8FA3] text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
-            >
-              プロダクト一覧に戻る
-            </Link>
-          </div>
-        </main>
+      <div className="max-w-4xl mx-auto px-6 py-20 text-center">
+        <h1 className="text-4xl font-bold text-[#6C8FA3] mb-4">
+          プロダクトが見つかりません
+        </h1>
+        <p className="text-lg text-[#4A4F52] mb-8">
+          申し訳ありません。このプロダクトは存在しません。
+        </p>
+        <Link
+          href="/products"
+          className="inline-block px-8 py-3 bg-[#6C8FA3] text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+        >
+          プロダクト一覧に戻る
+        </Link>
       </div>
     );
   }
@@ -80,27 +74,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#c8d8db]">
-      {/* Header/Navigation */}
-      <header className="border-b border-[#D9DEE2] backdrop-blur-xl">
-        <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-          <Link href="/">
-            <h1 className="text-2xl font-bold text-[#6C8FA3] hover:text-[#D5848C] transition-colors">
-              n0ta
-            </h1>
-          </Link>
-          <Link
-            href="/products"
-            className="text-[#6C8FA3] hover:text-[#D5848C] transition-colors flex items-center gap-2"
-          >
-            <span>←</span>
-            <span>プロダクト一覧</span>
-          </Link>
-        </nav>
-      </header>
-
+    <>
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto px-6 py-20">
         {/* Product Header */}
         <section className="mb-12">
           <div className="flex justify-between items-start mb-6">
@@ -121,28 +97,49 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             </span>
           </div>
 
-          {/* GitHub Link Button */}
-          {product.githubUrl && (
-            <a
-              href={product.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+          <div className="flex items-start gap-6">
+            {/* GitHub Link Button */}
+            {product.githubUrl && (
+              <a
+                href={product.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.547 2.91 1.186.092-.923.35-1.546.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.817c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.137 18.193 20 14.44 20 10.017 20 4.484 15.522 0 10 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              GitHub で見る
-            </a>
-          )}
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.547 2.91 1.186.092-.923.35-1.546.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.817c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.137 18.193 20 14.44 20 10.017 20 4.484 15.522 0 10 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                GitHub で見る
+              </a>
+            )}
+
+            {/* Product Images */}
+            {product.images && product.images.length > 0 && (
+              <div className="flex flex-wrap gap-4">
+                {product.images.map((imagePath, index) => (
+                  <div
+                    key={index}
+                    className="relative w-48 h-32 rounded-xl overflow-hidden bg-[#D9DEE2]"
+                  >
+                    <Image
+                      src={imagePath}
+                      alt={`${product.title} スクリーンショット ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </section>
 
         {/* Full Description */}
@@ -210,25 +207,6 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
           </div>
         </section>
 
-        {/* Tags */}
-        <section className="mb-12">
-          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
-              タグ
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {product.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-[#6C8FA3] text-[#c8d8db] rounded-full text-sm font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Navigation */}
         <section className="mt-16 pt-12 border-t border-[#D9DEE2]">
           <Link
@@ -239,14 +217,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <span>プロダクト一覧に戻る</span>
           </Link>
         </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[#D9DEE2] mt-20">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-[#4A4F52]">
-          <p>&copy; 2025 Nakai Ryoka. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }

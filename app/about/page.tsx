@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   SiReact,
   SiTypescript,
@@ -130,7 +131,7 @@ export default function About() {
   return (
     <>
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto px-6 py-20">
         {/* Page Title */}
         <section className="mb-16">
           <h2 className="text-5xl font-bold text-[#6C8FA3] mb-8">
@@ -157,13 +158,14 @@ export default function About() {
               趣味は写真撮影やダンス。開発以外では英語を中心とした語学とビジネスについて学習しています。
             </p>
           </div>
-          <div className="bg-gradient-to-br from-[#fcf7f8]/50 to-[#D9DEE2]/50 backdrop-blur-lg rounded-2xl p-8 flex items-center justify-center min-h-80">
-            <div className="text-center">
-              <div className="text-8xl mb-4">✨</div>
-              <p className="text-[#4A4F52] font-medium">
-                Nakai Ryoka
-              </p>
-            </div>
+          <div className="flex items-center justify-center">
+            <Image
+              src="/images/plofile.png"
+              alt="Nakai Ryoka"
+              width={280}
+              height={280}
+              className="rounded-lg object-cover shadow-2xl"
+            />
           </div>
         </section>
 
@@ -245,7 +247,7 @@ export default function About() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

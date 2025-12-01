@@ -17,7 +17,7 @@ export interface Product {
   role: string; // このプロジェクトでの自分の担当箇所
   technologies: string[]; // 使用した技術スタック
   githubUrl?: string; // GitHubリンク（オプション）
-  tags: string[]; // タグ（複数選択可）
+  images?: string[]; // プロダクトの画像パス配列（オプション）
   status: "Completed" | "In Progress" | "Planning"; // プロジェクトのステータス
 }
 
@@ -38,79 +38,57 @@ export interface Product {
  *   role: "担当箇所（例：フロントエンド開発、デザイン等）",
  *   technologies: ["React", "Next.js", "TypeScript"],
  *   githubUrl: "https://github.com/ryokcha/project-name",
- *   tags: ["React", "Web"],
  *   status: "In Progress"
  * }
  */
 export const products: Product[] = [
   // ========================================
-  // プロダクト 1: Project Alpha
+  // プロダクト 1: Discord Bot Maker
   // ========================================
   // 一覧ページに表示される順序：ID の降順（新しい順）
   // 詳細ページURL: /products/1
   {
     id: 1,
-    title: "Project Alpha",
-    description: "レスポンシブデザインとユーザー中心のアプローチを展示している最新のWebアプリケーション。",
-    fullDescription: "Project Alphaは、モダンなフロントエンド技術とレスポンシブデザイン原則を組み合わせた、ユーザー中心のWebアプリケーションです。複雑なコンポーネント管理とステート管理を実装し、スムーズなユーザー体験を実現しています。",
-    background: "ユーザーエクスペリエンスを重視したWebアプリケーションの開発方法を学び、実践するために始まったプロジェクトです。",
+    title: "Discord Bot Maker",
+    description: "Discord Botの作成を簡単にするためのWebアプリケーション。",
+    fullDescription: "Discord Bot Makerはノーコード、もしくはローコードでDiscord Botを作成できるWebアプリケーションです。作成の際につまづくポイントを徹底的に排除するために、細部までガイドを入れたり、必要なサイトに簡単にアクセスできる動線を作ったり、ユーザーフレンドリーなWebアプリを目指しました。",
+    background: "技育CAMPハッカソンvol.14にて制作したプロジェクトです。初めてのチーム開発で、GitHubをよりよく活用する方法を学びました。",
     teamSize: 2,
-    role: "フロントエンド開発、UI/UXデザイン、プロジェクト管理",
-    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
-    githubUrl: "https://github.com/ryokcha/project-alpha",
-    tags: ["React", "Next.js", "Tailwind CSS"],
+    role: "フロントエンド開発、UI/UXデザイン",
+    technologies: ["Next.js", "TypeScript", "GitHubOAuth", "Vercel"],
+    githubUrl: "https://github.com/dokkiitech/Discordbot-maker",
     status: "Completed",
   },
   // ========================================
-  // プロダクト 2: Design System
+  // プロダクト 2: Portfolio
   // ========================================
   // 詳細ページURL: /products/2
   {
     id: 2,
-    title: "Design System",
-    description: "再利用可能なコンポーネントとデザインガイドラインを備えた包括的なデザインシステム。",
-    fullDescription: "Design Systemは、複数のプロジェクト間で一貫したデザイン言語を実現するために開発された包括的なコンポーネントライブラリとデザインガイドラインです。Figmaでの設計から実装まで、デザインと開発の効率化を実現しています。",
-    background: "複数のプロジェクトで同じUIコンポーネントを何度も作成している課題に直面し、統一的で保守性の高いデザインシステムの必要性を感じて開発しました。",
+    title: "Portfolio",
+    description: "このポートフォリオサイト。デザインの統一感とかわいらしさをこだわりました。",
+    fullDescription: "n0taは苗字の「なかい」からトナカイを連想し、ラテン語でトナカイを示す「nota」をもじって名付けました。GitHubから自分の使用している技術をリアルタイムで見られるようにするなど、細部で新しい技術を取り入れるようにしました。自らの活動に応じて随時更新し、私の成長の足跡を残そうと考えています。デザインは若さや可能性を示す青を基調に、女性らしさを演出するために差し色としてピンクを用いています。",
+    background: "さまざまな方と出会う機会が増えたため、自分についてもっと知ってもらうためのポートフォリオサイトを作成しました。",
     teamSize: 1,
-    role: "デザインシステム設計、Figmaドキュメント作成、コンポーネント実装",
-    technologies: ["Figma", "React", "Storybook", "TypeScript", "CSS-in-JS"],
-    githubUrl: "https://github.com/ryokcha/design-system",
-    tags: ["UI/UX", "Design", "Documentation"],
-    status: "Completed",
+    role: "プロジェクト全体",
+    technologies: ["React", "TypeScript","Github API", "Vercel"],
+    githubUrl: "https://github.com/ryokcha/n0ta",
+    status: "In Progress",
   },
   // ========================================
-  // プロダクト 3: Mobile App
+  // プロダクト 3: Design System
   // ========================================
   // 詳細ページURL: /products/3
   {
     id: 3,
-    title: "Mobile App",
-    description: "直感的なインターフェースとスムーズなインタラクションを備えたクロスプラットフォームモバイルアプリケーション。",
-    fullDescription: "Mobile Appは、iOSとAndroidの両プラットフォームで動作するクロスプラットフォームモバイルアプリケーションです。直感的なナビゲーションとスムーズなアニメーションにより、ユーザーエンゲージメントを高めています。",
-    background: "モバイルアプリケーション開発スキルを習得し、幅広いデバイスで動作するアプリケーションの設計・実装方法を学ぶために開発しています。",
-    teamSize: 2,
-    role: "UI/UXデザイン、アプリケーション開発、ユーザーテスト",
-    technologies: ["React Native", "Expo", "TypeScript", "Redux", "Firebase"],
-    tags: ["Mobile", "UI Design", "Development"],
-    status: "In Progress",
+    title: "Design System",
+    description: "私らしさと使いやすさを考えたデザインシステム。",
+    fullDescription: "デザインシステムは、私のプロダクトに一貫性を持たせるために作成されたガイドラインとコンポーネントのセットです。これにより、開発プロセスが効率化され、ユーザー体験が向上します。",
+    background: "さまざまなプロダクトの開発を行うにつれてデザインを1から考えることに不便さを感じたため、私のプロダクトに一貫性を持たせるデザインシステムを作ろうと考えました。",
+    teamSize: 1,
+    role: "全体の設計とコンポーネント作成",
+    technologies: ["Figma"],
+    status: "planning",
   },
-  // ========================================
-  // プロダクト 4: E-commerce Platform
-  // ========================================
-  // 詳細ページURL: /products/4
-  {
-    id: 4,
-    title: "E-commerce Platform",
-    description: "最新のフロントエンドとロバストなバックエンドを備えたフルスタックEコマースソリューション。",
-    fullDescription: "E-commerce Platformは、完全なショッピング体験を提供するフルスタックEコマースソリューションです。商品管理、ユーザー認証、決済機能、注文管理など、実際のEコマースビジネスに必要な機能を実装予定です。",
-    background: "フルスタック開発スキルを習得し、複雑なビジネスロジックを伴うアプリケーション開発の経験を積むために計画されたプロジェクトです。",
-    teamSize: 3,
-    role: "アーキテクチャ設計、フロントエンド開発、バックエンドAPI設計",
-    technologies: ["Next.js", "Node.js", "Express", "PostgreSQL", "Stripe", "Docker"],
-    githubUrl: "https://github.com/ryokcha/ecommerce-platform",
-    tags: ["Full-Stack", "React", "Node.js"],
-    status: "Planning",
-  },
-
 
 ];

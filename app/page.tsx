@@ -4,45 +4,28 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <main className="max-w-4xl mx-auto px-6 py-20">
-        <section className="text-center mb-20">
-          <h2 className="text-5xl font-bold text-[#6C8FA3] mb-6">
+      <main className="h-screen flex items-center justify-center px-6">
+        <section className="text-center">
+          <h2 className="text-7xl font-bold text-[#6C8FA3] mb-8">
             Nakai Ryoka
           </h2>
-          <p className="text-xl text-[#4A4F52] mb-8">
+          <p className="text-3xl text-[#4A4F52] mb-12">
             Portfolio
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-6 justify-center">
             <Link
               href="/about"
-              className="px-8 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+              className="px-10 py-4 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium text-lg hover:bg-[#D5848C] transition-colors"
             >
               About Me
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border-2 border-[#6C8FA3] text-[#6C8FA3] rounded-xl font-medium hover:bg-[#F7E3E5] hover:backdrop-blur-lg transition-colors"
+              className="px-10 py-4 border-2 border-[#6C8FA3] text-[#6C8FA3] rounded-xl font-medium text-lg hover:bg-[#F7E3E5] hover:backdrop-blur-lg transition-colors"
             >
               Get In Touch
             </Link>
           </div>
-        </section>
-
-        {/* Featured Section */}
-        <section className="mb-20 text-center">
-          <h3 className="text-3xl font-bold text-[#6C8FA3] mb-4">
-            Welcome
-          </h3>
-          <p className="text-[#4A4F52] mb-4 leading-relaxed">
-            ポートフォリオへようこそ。
-            ここでは私の持っているスキルやプロダクトから個人的な趣味に至るまで、
-            幅広く自己紹介をしています。
-            もっと私について知っていただけると嬉しいです。
-          </p>
-          <p className="text-[#4A4F52] leading-relaxed">
-            Explore my portfolio to see my recent projects and works. Feel free
-            to reach out if you would like to collaborate or discuss ideas.
-          </p>
         </section>
       </main>
     </>

@@ -15,7 +15,7 @@ export default function Products() {
   return (
     <>
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto px-6 py-20">
         {/* Page Title */}
         <section className="mb-16">
           <h2 className="text-5xl font-bold text-[#6C8FA3] mb-8">
@@ -58,18 +58,6 @@ export default function Products() {
                   <p className="text-[#4A4F52] mb-6 leading-relaxed">
                     {product.description}
                   </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {product.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-sm px-3 py-1 bg-[#D9DEE2] text-[#4A4F52] rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </Link>
             ))}
@@ -77,12 +65,12 @@ export default function Products() {
         </section>
 
         {/* Closing Message */}
-        <section className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
-          <h2 className="text-4xl text-[#6C8FA3] leading-relaxed">
+        <section className="bg-[#D5848C]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
+          <h2 className="text-6xl font-bold text-[#6C8FA3] leading-relaxed" style={{ fontFamily: "var(--font-cormorant-garamond)" }}>
             Un roseau pensant
           </h2>
         </section>
-      </main>
+      </div>
     </>
   );
 }
