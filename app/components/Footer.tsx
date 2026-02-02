@@ -6,8 +6,10 @@ export function Footer() {
   return (
     <footer className="rounded-t-3xl bg-[#567282]/80 backdrop-blur-lg dark:bg-[#567282]/80 min-h-[50vh] flex items-center justify-center">
       <div className="max-w-4xl mx-auto px-6 py-12 text-center">
-        <h1 className="footer-title text-4xl font-bold text-[#c8d8db] mb-4">
-          ご覧いただきありがとうございました
+        <h1 className="footer-title font-bold text-[#c8d8db] mb-4 text-[clamp(1.5rem,5vw,2.5rem)] leading-relaxed">
+          ご覧いただき
+          <br />
+          ありがとうございました
         </h1>
         <p className="text-xl text-[#c8d8db] mb-8">
           Thank you for taking time for me!
