@@ -90,5 +90,21 @@ export const products: Product[] = [
     technologies: ["Figma"],
     status: "Planning",
   },
+  // ========================================
+  // プロダクト 4: TSUNAGULINK
+  // ========================================
+  // 詳細ページURL: /products/4
+  {
+    id: 4,
+    title: "TSUNAGULINK",
+    description: "学生起業家のための電子名刺作成サービス",
+    fullDescription: "TSUNAGULINKは、NFCキーホルダーを用いてポートフォリオを共有したり、訪問者数を分析したりできるサービスです。",
+    background: "先輩たちとのチームでの開発を行いました。初めてのバックエンド開発で、先輩に指導していただきながらバックエンドの基礎を学びました",
+    teamSize: 3,
+    role: "バックエンド開発(サブ)",
+    technologies: ["Next.js/TS", "Vercel", "docker", "CSS", "Go","GA4"],
+    githubUrl: "非公開",
+    status: "Completed"
+  },
 
 ];
