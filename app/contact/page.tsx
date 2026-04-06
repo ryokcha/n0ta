@@ -1,4 +1,4 @@
-import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaTwitter, FaGithub,FaFacebook,FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const socialLinks = [
@@ -6,6 +6,12 @@ export default function Contact() {
       name: "Twitter",
       url: "https://twitter.com/Nakai_0r314",
       icon: FaTwitter,
+      color: "hover:text-black",
+    },
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/ryokcha",
+      icon: FaFacebook,
       color: "hover:text-black",
     },
     {
