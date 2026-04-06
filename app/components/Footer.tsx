@@ -1,6 +1,6 @@
 "use client";
 
-import { FaTwitter, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
 
 export function Footer() {
   return (
@@ -25,6 +25,15 @@ export function Footer() {
             aria-label="Twitter"
           >
             <FaTwitter size={24} />
+          </a>
+          <a
+            href="https://www.facebook.com/ryokcha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[#c8d8db] text-[#567282] hover:bg-[#D5848C] hover:text-white transition-colors"
+            aria-label="Facebook"
+          >
+            <FaFacebook size={24} />
           </a>
           <a
             href="https://github.com/ryokcha"
