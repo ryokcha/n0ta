@@ -1,0 +1,11 @@
+{
+  "languages": [
+    { "name": "TypeScript", "percentage": 45 },
+    { "name": "JavaScript", "percentage": 20 },
+    { "name": "Python", "percentage": 10 },
+    { "name": "HTML", "percentage": 10 },
+    { "name": "CSS", "percentage": 10 },
+    { "name": "Go", "percentage": 5 }
+  ],
+  "frameworks": ["React", "Next.js", "Tailwind CSS", "Express"]
+}

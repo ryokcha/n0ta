@@ -14,7 +14,7 @@ export function DotsBackground() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const dots: Dot[] = [];
+    const newDots: Dot[] = [];
     const gridCells: Set<string> = new Set();
     const cellSize = 20;
     const maxCols = Math.ceil(100 / cellSize);
@@ -23,7 +23,7 @@ export function DotsBackground() {
     let attempts = 0;
     const maxAttempts = 10 * 10;
 
-    while (dots.length < 10 && attempts < maxAttempts) {
+    while (newDots.length < 10 && attempts < maxAttempts) {
       const col = Math.floor(Math.random() * maxCols);
       const row = Math.floor(Math.random() * maxRows);
       const cellKey = `${col},${row}`;
@@ -36,8 +36,8 @@ export function DotsBackground() {
         const left = col * cellSize + offsetX;
         const top = row * cellSize + offsetY;
 
-        dots.push({
-          id: dots.length,
+        newDots.push({
+          id: newDots.length,
           left: `${left}%`,
           top: `${top}%`,
           size,
@@ -46,8 +46,11 @@ export function DotsBackground() {
       attempts++;
     }
 
-    setDots(dots);
-    setMounted(true);
+    // defer state update to avoid synchronous setState warning
+    requestAnimationFrame(() => {
+      setDots(newDots);
+      setMounted(true);
+    });
   }, []);
 
   if (!mounted) {
