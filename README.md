@@ -199,6 +199,14 @@ Tailwind CSS の `md:` ブレークポイントを使用して、768px 以上で
 
 ## 🎨 カラーリファレンス
 
+## 🔐 GitHub API 依存とセットアップ
+
+- About ページのスキル表示は GitHub API を使用します。ネットワーク制限下では `api.github.com` への名前解決/通信を許可してください。
+- レート制限回避のため GitHub Personal Access Token を環境変数で設定してください。
+  - 開発: `.env.local` に `GITHUB_TOKEN=ghp_xxx` を追加し `npm run dev` を再起動。
+  - 本番(Vercel など): Project Environment Variables に同名で登録。
+- API が到達不能な場合は `app/data/github-fallback.json` のキャッシュデータを返し、レスポンスヘッダーに `X-GitHub-Fallback: true` を付与します。必要に応じてこのキャッシュを手動更新してください。
+
 カラーは CSS 変数として `app/globals.css` で管理されています：
 
 ```css

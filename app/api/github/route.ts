@@ -4,6 +4,7 @@
  */
 
 import { NextResponse } from 'next/server';
+import fallbackData from '@/app/data/github-fallback.json';
 
 interface LanguageData {
   [key: string]: number;
@@ -19,6 +20,22 @@ export interface GithubSkill {
   name: string;
   percentage: number;
   color?: string;
+}
+
+function buildFallbackResponse(reason: unknown) {
+  console.error('GitHub API unreachable, serving fallback data:', reason);
+  return NextResponse.json(
+    {
+      languages: fallbackData.languages,
+      frameworks: fallbackData.frameworks,
+      fallback: true,
+      message: 'GitHub APIに接続できなかったためキャッシュデータを返しました。',
+    },
+    {
+      status: 200,
+      headers: { 'X-GitHub-Fallback': 'true' },
+    }
+  );
 }
 
 export async function GET(request: Request) {
@@ -104,11 +121,18 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ languages, frameworks });
   } catch (error) {
+    // ネットワークやDNSエラー時はフォールバックを返す
+    if (error instanceof Error &&
+      (error.message.includes('ENOTFOUND') ||
+        error.message.includes('ECONNREFUSED') ||
+        error.message.includes('EAI_AGAIN') ||
+        error.message.includes('fetch failed'))
+    ) {
+      return buildFallbackResponse(error);
+    }
+
     console.error('Failed to fetch GitHub languages:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch GitHub data' },
-      { status: 500 }
-    );
+    return buildFallbackResponse(error);
   }
 }
 
