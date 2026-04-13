@@ -46,10 +46,10 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     return (
       <div className="max-w-4xl mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl font-bold text-[#6C8FA3] mb-4">
-          プロダクトが見つかりません
+          Product Not Found!
         </h1>
         <p className="text-lg text-[#4A4F52] mb-8">
-          申し訳ありません。このプロダクトは存在しません。
+          このプロダクトは見つかりませんでした。URL を確認するか、プロダクト一覧からお探しください。
         </p>
         <Link
           href="/products"
@@ -146,7 +146,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <section className="mb-12">
           <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-[#6C8FA3] mb-4">
-              プロジェクト概要
+              概要
             </h2>
             <p className="text-[#4A4F52] leading-relaxed">
               {product.fullDescription}
