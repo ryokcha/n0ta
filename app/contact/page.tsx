@@ -32,7 +32,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-[#4A4F52]">
-            どんなご用件でもお気軽にご連絡ください。
+            お気軽にご連絡ください。
           </p>
         </section>
 

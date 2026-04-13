@@ -22,7 +22,7 @@ export default function Products() {
             Products & Projects
           </h2>
           <p className="text-xl text-[#4A4F52]">
-            A showcase of my recent work and creative projects.
+            What did I do? If you wanna know, check it out now.
           </p>
         </section>
 
@@ -62,13 +62,6 @@ export default function Products() {
               </Link>
             ))}
           </div>
-        </section>
-
-        {/* Closing Message */}
-        <section className="bg-[#D5848C]/50 backdrop-blur-lg rounded-3xl p-12 text-center">
-          <h2 className="text-6xl font-bold text-[#6C8FA3] leading-relaxed" style={{ fontFamily: "var(--font-cormorant-garamond)" }}>
-            Un roseau pensant
-          </h2>
         </section>
       </div>
     </>

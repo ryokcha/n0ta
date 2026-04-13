@@ -39,8 +39,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "n0ta - Nakai Ryoka Portfolio",
-  description: "中井涼日のポートフォリオサイト。デザインと開発の作品を紹介しています。",
+  title: "n0ta",
+  description: "Who is nakai?",
 };
 
 export default function RootLayout({

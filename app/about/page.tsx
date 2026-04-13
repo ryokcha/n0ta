@@ -138,7 +138,7 @@ export default function About() {
             About Me
           </h2>
           <p className="text-xl text-[#4A4F52]">
-            Learning and growing.
+            Un roseau pensant.
           </p>
         </section>
 
@@ -152,13 +152,13 @@ export default function About() {
               中井涼日
             </p>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
-              UI/UXを考えることが大好きです。
+              ことばとデザインとお勉強が大好きなヒトです。
             </p>
             <p className="text-[#4A4F52] mb-4 leading-relaxed">
-              開発の経験は少ないながらに様々なことに関心を持っているため、学習と挑戦を続けています。現在はフロントエンド開発を中心に学習を続けていますが、将来的にはフルスタックエンジニアを目指しています。
+              開発の経験は多くはありませんが、論理と想像で何かをつくるために学び続けています。
             </p>
             <p className="text-[#4A4F52] leading-relaxed">
-              趣味は写真撮影やダンス。開発以外では英語を中心とした語学とビジネスについて学習しています。
+              趣味は写真撮影とダンス。私生活ではお猫さまのしもべをしています。
             </p>
           </div>
           <div className="flex items-center justify-center">
@@ -207,7 +207,7 @@ export default function About() {
                 </div>
               ) : (
                 <div className="text-center py-8">
-                  <p className="text-[#4A4F52]">GitHub データの取得に失敗しました</p>
+                  <p className="text-[#4A4F52]">GitHubデータ取得に失敗。</p>
                 </div>
               )}
             </div>
@@ -219,7 +219,7 @@ export default function About() {
               </h4>
               {loading ? (
                 <div className="flex items-center justify-center py-8">
-                  <p className="text-[#4A4F52]">Now Loading</p>
+                  <p className="text-[#4A4F52]">Now Loading...</p>
                 </div>
               ) : githubLanguages.length > 0 ? (
                 <div className="space-y-3">
@@ -244,7 +244,7 @@ export default function About() {
                 </div>
               ) : (
                 <div className="text-center py-8">
-                  <p className="text-[#4A4F52]">GitHub データの取得に失敗しました</p>
+                  <p className="text-[#4A4F52]">GitHubデータ取得に失敗。</p>
                 </div>
               )}
             </div>

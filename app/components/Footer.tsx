@@ -12,7 +12,7 @@ export function Footer() {
           ありがとうございました
         </h1>
         <p className="text-xl text-[#c8d8db] mb-8">
-          Thank you for taking time for me!
+          Thank you for visiting!
         </p>
 
         {/* SNS Links */}
