@@ -13,7 +13,6 @@
 
 - **デザイン原則**: Apple Liquid Glass（ブラー効果、丸みのあるコーナー、透明度）
 - **レスポンシブ**: モバイル対応（Tailwind CSS）
-- **テクスチャ**: スケッチブック風のざらざらした質感
 
 ## 📁 プロジェクト構造
 
@@ -236,6 +235,7 @@ Tailwind CSS の `md:` ブレークポイントを使用して、768px 以上で
 ## 📞 連絡先
 
 - **Twitter**: https://x.com/Nakai_0r314
+- **facebook**: https://www.facebook.com/ryokcha
 - **GitHub**: https://github.com/ryokcha
 - **Email**: 922ryouka@gmail.com
 
