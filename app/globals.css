@@ -58,3 +58,34 @@ a[role="button"],
   font-family: var(--font-fc-mincho);
   font-weight: bold;
 }
+
+.paper-outline {
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 14px 30px rgba(108, 143, 163, 0.08);
+}
+
+.paper-outline::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: inherit;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M1.8 6.5C14 1.4 33 3.2 50 2.2C69 1 88 1.8 98 7.6L98.4 92.2C88.8 98.2 67.4 97.2 49.8 98C30.2 98.8 11.8 98.3 1.9 92.6L1.8 6.5Z' fill='none' stroke='%23D5848C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='1.05 0.95' opacity='0.96'/%3E%3C/svg%3E");
+  transform: rotate(-0.75deg);
+}
+
+.paper-outline-home::before {
+  inset: -12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M1.8 6.5C14 1.4 33 3.2 50 2.2C69 1 88 1.8 98 7.6L98.4 92.2C88.8 98.2 67.4 97.2 49.8 98C30.2 98.8 11.8 98.3 1.9 92.6L1.8 6.5Z' fill='none' stroke='%23D5848C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='1.05 0.95' opacity='0.96'/%3E%3C/svg%3E");
+  transform: rotate(-0.8deg);
+}
+
+.home-crayon-card {
+  background-color: rgba(255, 255, 255, 0.96);
+  background-image: var(--texture-sketchy);
+  background-size: 280px 280px;
+}
