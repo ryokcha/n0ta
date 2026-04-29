@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import type { IconType } from 'react-icons';
 import {
   SiReact,
   SiTypescript,
@@ -31,6 +32,26 @@ import {
   SiKubernetes,
   SiGit,
   SiSass,
+  SiC,
+  SiCplusplus,
+  SiDart,
+  SiJson,
+  SiJupyter,
+  SiKotlin,
+  SiLua,
+  SiMarkdown,
+  SiPerl,
+  SiR,
+  SiScala,
+  SiShell,
+  SiSwift,
+  SiYaml,
+  SiAstro,
+  SiBun,
+  SiNodedotjs,
+  SiExpress,
+  SiPrisma,
+  SiSupabase,
 } from 'react-icons/si';
 import {
   FaPalette,
@@ -39,31 +60,59 @@ import {
 } from 'react-icons/fa';
 import { getGithubLanguages } from '@/app/lib/github';
 
-const LANGUAGE_TO_ICON: Record<string, React.ComponentType<{ className?: string }>> = {
-  TypeScript: SiTypescript,
-  JavaScript: SiJavascript,
-  Python: SiPython,
-  Go: SiGo,
-  Rust: SiRust,
-  PHP: SiPhp,
-  Ruby: SiRuby,
-  HTML: SiHtml5,
-  CSS: SiCss3,
-  SCSS: SiSass,
-  Vue: SiVuedotjs,
-  React: SiReact,
-  'Next.js': SiNextdotjs,
-  Angular: SiAngular,
-  Svelte: SiSvelte,
-  'Tailwind CSS': SiTailwindcss,
-  GraphQL: SiGraphql,
-  PostgreSQL: SiPostgresql,
-  MySQL: SiMysql,
-  MongoDB: SiMongodb,
-  Firebase: SiFirebase,
-  Docker: SiDocker,
-  Kubernetes: SiKubernetes,
-  Git: SiGit,
+type LanguageIconMeta = {
+  icon: IconType;
+  color: string;
+};
+
+const LANGUAGE_TO_ICON: Record<string, LanguageIconMeta> = {
+  TypeScript: { icon: SiTypescript, color: '#3178C6' },
+  JavaScript: { icon: SiJavascript, color: '#F7DF1E' },
+  Python: { icon: SiPython, color: '#3776AB' },
+  Go: { icon: SiGo, color: '#00ADD8' },
+  Rust: { icon: SiRust, color: '#000000' },
+  PHP: { icon: SiPhp, color: '#777BB4' },
+  Ruby: { icon: SiRuby, color: '#CC342D' },
+  HTML: { icon: SiHtml5, color: '#E34F26' },
+  CSS: { icon: SiCss3, color: '#1572B6' },
+  SCSS: { icon: SiSass, color: '#CC6699' },
+  Sass: { icon: SiSass, color: '#CC6699' },
+  C: { icon: SiC, color: '#A8B9CC' },
+  'C++': { icon: SiCplusplus, color: '#00599C' },
+  Dart: { icon: SiDart, color: '#0175C2' },
+  JSON: { icon: SiJson, color: '#5E5C5C' },
+  'Jupyter Notebook': { icon: SiJupyter, color: '#F37626' },
+  Kotlin: { icon: SiKotlin, color: '#7F52FF' },
+  Lua: { icon: SiLua, color: '#2C2D72' },
+  Markdown: { icon: SiMarkdown, color: '#000000' },
+  Perl: { icon: SiPerl, color: '#39457E' },
+  R: { icon: SiR, color: '#276DC3' },
+  Scala: { icon: SiScala, color: '#DC322F' },
+  Shell: { icon: SiShell, color: '#89E051' },
+  'Shell Script': { icon: SiShell, color: '#89E051' },
+  Swift: { icon: SiSwift, color: '#F05138' },
+  YAML: { icon: SiYaml, color: '#CB171E' },
+  Vue: { icon: SiVuedotjs, color: '#4FC08D' },
+  'Vue.js': { icon: SiVuedotjs, color: '#4FC08D' },
+  React: { icon: SiReact, color: '#61DAFB' },
+  'Next.js': { icon: SiNextdotjs, color: '#111111' },
+  Angular: { icon: SiAngular, color: '#DD0031' },
+  Svelte: { icon: SiSvelte, color: '#FF3E00' },
+  'Tailwind CSS': { icon: SiTailwindcss, color: '#06B6D4' },
+  GraphQL: { icon: SiGraphql, color: '#E10098' },
+  PostgreSQL: { icon: SiPostgresql, color: '#4169E1' },
+  MySQL: { icon: SiMysql, color: '#4479A1' },
+  MongoDB: { icon: SiMongodb, color: '#47A248' },
+  Firebase: { icon: SiFirebase, color: '#FFCA28' },
+  Docker: { icon: SiDocker, color: '#2496ED' },
+  Kubernetes: { icon: SiKubernetes, color: '#326CE5' },
+  Git: { icon: SiGit, color: '#F05032' },
+  Astro: { icon: SiAstro, color: '#FF5D01' },
+  Bun: { icon: SiBun, color: '#FBF0DF' },
+  'Node.js': { icon: SiNodedotjs, color: '#5FA04E' },
+  Express: { icon: SiExpress, color: '#000000' },
+  Prisma: { icon: SiPrisma, color: '#2D3748' },
+  Supabase: { icon: SiSupabase, color: '#3ECF8E' },
 };
 
 const designAndCreativeSkills = [
@@ -78,7 +127,8 @@ const designAndCreativeSkills = [
 
 interface Skill {
   name: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: IconType;
+  color?: string;
 }
 
 function SkillCard({ skill }: { skill: Skill }) {
@@ -87,7 +137,10 @@ function SkillCard({ skill }: { skill: Skill }) {
     <div className="group flex flex-col items-center">
       <div className="relative w-12 h-12 flex items-center justify-center">
         <IconComponent
-          className="text-[#6C8FA3] text-3xl group-hover:text-[#D5848C] transition-colors duration-300"
+          className={skill.color
+            ? 'text-3xl transition-transform duration-300 group-hover:scale-110'
+            : 'text-[#6C8FA3] text-3xl group-hover:text-[#D5848C] transition-colors duration-300'}
+          style={skill.color ? { color: skill.color } : undefined}
         />
         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           <div className="bg-[#6C8FA3] text-white text-xs px-2 py-1 rounded whitespace-nowrap">
@@ -122,11 +175,21 @@ export default function About() {
   // GitHub言語データからスキルを構築
   const codingLanguages: Skill[] = githubLanguages
     .slice(0, 8)
-    .map((lang) => ({
-      name: lang.name,
-      icon: LANGUAGE_TO_ICON[lang.name] || SiGit,
-    }))
-    .filter((skill) => LANGUAGE_TO_ICON[skill.name]);
+    .flatMap((lang): Skill[] => {
+      const languageMeta = LANGUAGE_TO_ICON[lang.name];
+
+      if (!languageMeta) {
+        return [];
+      }
+
+      return [
+        {
+          name: lang.name,
+          icon: languageMeta.icon,
+          color: languageMeta.color,
+        },
+      ];
+    });
 
   return (
     <>
@@ -151,15 +214,17 @@ export default function About() {
             <p className="text-lg text-[#6C8FA3] mb-6">
               中井涼日
             </p>
-            <p className="text-[#4A4F52] mb-4 leading-relaxed">
-              ことばとデザインとお勉強が大好きなヒトです。
-            </p>
-            <p className="text-[#4A4F52] mb-4 leading-relaxed">
-              開発の経験は多くはありませんが、論理と想像で何かをつくるために学び続けています。
-            </p>
-            <p className="text-[#4A4F52] leading-relaxed">
-              趣味は写真撮影とダンス。私生活ではお猫さまのしもべをしています。
-            </p>
+            <div className="space-y-[1.6rem] text-[#4A4F52] leading-[1.6]">
+              <p>
+                ことばとデザインとお勉強が大好きなヒトです。
+              </p>
+              <p>
+                開発の経験は多くはありませんが、論理と想像で何かをつくるために学び続けています。
+              </p>
+              <p>
+                趣味は写真撮影とダンス。私生活ではお猫さまのしもべをしています。
+              </p>
+            </div>
           </div>
           <div className="flex items-center justify-center">
             <Image
@@ -179,7 +244,7 @@ export default function About() {
           </h3>
           <div className="space-y-8">
             {/* Design & UI/UX Section */}
-            <div className="bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
+            <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-6">
                 Design & UI/UX
               </h4>
@@ -191,7 +256,7 @@ export default function About() {
             </div>
 
             {/* Coding & Development Section */}
-            <div className="bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
+            <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-6">
                 Coding & Development
               </h4>
@@ -213,7 +278,7 @@ export default function About() {
             </div>
 
             {/* Languages & Tools Section */}
-            <div className="bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
+            <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
               <h4 className="text-lg font-semibold text-[#6C8FA3] mb-6">
                 Languages & Tools
               </h4>
