@@ -175,20 +175,21 @@ export default function About() {
   // GitHub言語データからスキルを構築
   const codingLanguages: Skill[] = githubLanguages
     .slice(0, 8)
-    .map((lang) => {
+    .flatMap((lang): Skill[] => {
       const languageMeta = LANGUAGE_TO_ICON[lang.name];
 
       if (!languageMeta) {
-        return null;
+        return [];
       }
 
-      return {
-        name: lang.name,
-        icon: languageMeta.icon,
-        color: languageMeta.color,
-      };
-    })
-    .filter((skill): skill is Skill => skill !== null);
+      return [
+        {
+          name: lang.name,
+          icon: languageMeta.icon,
+          color: languageMeta.color,
+        },
+      ];
+    });
 
   return (
     <>
