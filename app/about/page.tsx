@@ -200,7 +200,7 @@ export default function About() {
           <h2 className="text-5xl font-bold text-[#6C8FA3] mb-8">
             About Me
           </h2>
-          <p className="text-xl text-[#4A4F52]">
+          <p className="text-xl text-[#6C8FA3]">
             Un roseau pensant.
           </p>
         </section>
