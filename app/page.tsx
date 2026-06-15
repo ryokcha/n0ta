@@ -1,20 +1,20 @@
 import Link from "next/link";
-import { DotsBackground } from "@/app/components/DotsBackground";
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <main className="h-screen flex items-center justify-center px-6 relative overflow-hidden">
-        <DotsBackground />
-        <section className="text-center relative z-10 bg-white/30 backdrop-blur-md rounded-3xl px-12 py-16 w-full md:w-[70%]">
-          <h2 className="text-7xl font-bold text-[#6C8FA3] mb-8">
+      <main className="min-h-screen flex items-center justify-center px-5 py-8 relative overflow-hidden md:px-8">
+        <section
+          className="paper-outline paper-outline-home home-crayon-card text-center relative z-10 rounded-3xl px-6 py-[2.4rem] w-full md:w-[70%] md:px-10 md:py-16 lg:px-12 lg:py-[4.8rem]"
+        >
+          <h2 className="text-5xl md:text-7xl font-bold text-[#6C8FA3] mb-[1.5rem] md:mb-6">
             Nakai Ryoka
           </h2>
-          <p className="text-3xl text-[#4A4F52] mb-12">
+          <p className="text-2xl md:text-3xl text-[#4A4F52] mb-[2.4rem] md:mb-10">
             Portfolio
           </p>
-          <div className="flex gap-6 justify-center flex-wrap">
+          <div className="flex gap-4 md:gap-6 justify-center flex-wrap">
             <Link
               href="/about"
               className="px-10 py-4 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium text-lg hover:bg-[#567282] transition-colors"

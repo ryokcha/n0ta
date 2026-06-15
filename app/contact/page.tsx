@@ -38,7 +38,7 @@ export default function Contact() {
 
         {/* Contact Information */}
         <section className="mb-16">
-          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-12">
+          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-12">
             <h3 className="text-3xl font-bold text-[#6C8FA3] mb-8">
               Connect With Me
             </h3>
@@ -55,7 +55,7 @@ export default function Contact() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-2xl bg-white/50 backdrop-blur-lg hover:bg-[#E5D5CE] hover:border-[#D5848C] transition-all duration-300 ease-out group"
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-white/50 backdrop-blur-lg hover:bg-[#E5D5CE] transition-all duration-300 ease-out group"
                   >
                     <div className="text-4xl group-hover:scale-110 transition-transform duration-300 text-[#6C8FA3]">
                       <IconComponent />
@@ -76,7 +76,7 @@ export default function Contact() {
                 })}
                 <a
                   href="mailto:922ryouka@gmail.com"
-                  className="flex items-center gap-4 p-4 border-2 border-[#D9DEE2] rounded-2xl bg-white/50 backdrop-blur-lg hover:bg-[#E5D5CE] hover:border-[#D5848C] transition-all duration-300 ease-out group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/50 backdrop-blur-lg hover:bg-[#E5D5CE] transition-all duration-300 ease-out group"
                 >
                   <div className="text-4xl group-hover:scale-110 transition-transform duration-300 text-[#6C8FA3]">
                     <FaEnvelope />

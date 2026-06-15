@@ -144,7 +144,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
         {/* Full Description */}
         <section className="mb-12">
-          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-[#6C8FA3] mb-4">
               概要
             </h2>
@@ -157,7 +157,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         {/* Project Info Grid */}
         <section className="mb-12 grid md:grid-cols-2 gap-8">
           {/* Background */}
-          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-[#6C8FA3] mb-4">
               作成背景
             </h3>
@@ -167,7 +167,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           </div>
 
           {/* Team & Role */}
-          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
               プロジェクト情報
             </h3>
@@ -190,7 +190,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
         {/* Technologies */}
         <section className="mb-12">
-          <div className="bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
+          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
             <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
               使用技術
             </h3>
