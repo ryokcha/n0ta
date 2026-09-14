@@ -1,41 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cormorant_Garamond, Mulish, Noto_Sans_JP, Outfit } from "next/font/google";
+import { Zen_Maru_Gothic, Noto_Sans_JP, Zen_Kaku_Gothic_New } from "next/font/google";
 import { Navigation } from "@/app/components/Navigation";
 import { Footer } from "@/app/components/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Design System typography — heading/body/ui roles (see app/styles/tokens.css)
+// Only the weights the Design System's text styles actually use (regular/medium/bold).
+const zenMaruGothic = Zen_Maru_Gothic({
+  variable: "--font-zen-maru-gothic",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const cormorantGaramond = Cormorant_Garamond({
-  variable: "--font-cormorant-garamond",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
-
-const mulish = Mulish({
-  variable: "--font-mulish",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
 });
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  variable: "--font-zen-kaku-gothic-new",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cormorantGaramond.variable} ${mulish.variable} ${notoSansJP.variable} ${outfit.variable} antialiased bg-[#c8d8db]`}
+        className={`${zenMaruGothic.variable} ${notoSansJP.variable} ${zenKakuGothicNew.variable} antialiased`}
       >
         <Navigation />
         <main className="min-h-screen">

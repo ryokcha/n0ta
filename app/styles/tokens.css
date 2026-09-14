@@ -1,0 +1,178 @@
+/*
+  Design System — Design Tokens
+  キャンバスのような柔らかさと自由感を掛け合わせたデザイン
+
+  Ported 1:1 from the shared Design System (tokens.css / tokens.json —
+  see the Figma library "Design System"). Only the three font-family
+  values are adapted: they point at the next/font CSS variables set up
+  in app/layout.tsx instead of relying on a <link> tag, since Next.js
+  self-hosts and optimizes Google Fonts through next/font.
+*/
+
+:root {
+  /* ============================================================
+     Primitives — raw values. Never use these directly in
+     components; always go through the semantic tokens below.
+     ============================================================ */
+
+  /* Primitives / main (from #6C8FA3) */
+  --color-main-50: #F3F6F8;
+  --color-main-100: #E7EDF0;
+  --color-main-200: #D0DBE2;
+  --color-main-300: #B8C9D3;
+  --color-main-400: #92ACBB;
+  --color-main-500: #6C8FA3;
+  --color-main-600: #5F7E8F;
+  --color-main-700: #526D7C;
+  --color-main-800: #455C68;
+  --color-main-900: #384A55;
+
+  /* Primitives / accent (from #D5848C) */
+  --color-accent-50: #FCF5F6;
+  --color-accent-100: #F8EBED;
+  --color-accent-200: #F2D8DA;
+  --color-accent-300: #EBC4C8;
+  --color-accent-400: #E0A4AA;
+  --color-accent-500: #D5848C;
+  --color-accent-600: #BB747B;
+  --color-accent-700: #A2646A;
+  --color-accent-800: #88545A;
+  --color-accent-900: #6F4549;
+
+  /* Primitives / neutral (anchored on #F4F6F7 bg / #D9DEE2 border / #4A4F52 text) */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F4F6F7;
+  --color-neutral-100: #E7EAED;
+  --color-neutral-200: #D9DEE2;
+  --color-neutral-300: #B5BABE;
+  --color-neutral-400: #92979A;
+  --color-neutral-500: #757A7D;
+  --color-neutral-600: #5F6468;
+  --color-neutral-700: #4A4F52;
+  --color-neutral-800: #383B3E;
+  --color-neutral-900: #252829;
+  --color-neutral-950: #161819;
+
+  /* ============================================================
+     Semantic — components bind to these. Light mode only (v1).
+     ============================================================ */
+
+  /* Background */
+  --color-bg-canvas: var(--color-neutral-50);
+  --color-bg-surface: var(--color-neutral-0);
+  --color-bg-surface-muted: var(--color-neutral-100);
+  --color-bg-main: var(--color-main-500);
+  --color-bg-main-hover: var(--color-main-600);
+  --color-bg-main-active: var(--color-main-700);
+  --color-bg-main-subtle: var(--color-main-50);
+  --color-bg-accent: var(--color-accent-500);
+  --color-bg-accent-hover: var(--color-accent-600);
+  --color-bg-accent-subtle: var(--color-accent-50);
+  --color-bg-disabled: var(--color-neutral-100);
+
+  /* Text */
+  --color-text-primary: var(--color-neutral-700);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-muted: var(--color-neutral-400);
+  --color-text-on-main: var(--color-neutral-0);
+  /* text/on-accent: fixed during a11y QA — white-on-accent measured ~2.8:1
+     (fails WCAG AA even for large text). Dark-on-accent measures ~5.3:1. */
+  --color-text-on-accent: var(--color-neutral-900);
+  /* text/accent: fixed during a11y QA — accent/600 on white measured ~3.55:1
+     (fails AA for the small helper/caption text it's used on).
+     accent/700 measures ~4.6:1. */
+  --color-text-accent: var(--color-accent-700);
+  --color-text-disabled: var(--color-neutral-300);
+
+  /* Border */
+  --color-border-default: var(--color-neutral-200);
+  --color-border-muted: var(--color-neutral-100);
+  --color-border-strong: var(--color-neutral-400);
+  --color-border-main: var(--color-main-500);
+  --color-border-accent: var(--color-accent-500);
+  --color-border-focus: var(--color-main-500);
+
+  /* Icon */
+  --color-icon-primary: var(--color-neutral-700);
+  --color-icon-secondary: var(--color-neutral-500);
+  --color-icon-on-main: var(--color-neutral-0);
+
+  /* ============================================================
+     Layout — spacing, radius, stroke. Generous & soft, matching
+     the "canvas-like softness + freedom" design principle.
+     ============================================================ */
+
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 20px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 96px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --stroke-thin: 1px;
+  --stroke-regular: 1.5px;
+  --stroke-thick: 2px;
+
+  /* ============================================================
+     Typography — 3 families used by role, per the confirmed
+     mapping (originally Hiragino Maru Gothic / Toppan Bunkyu
+     Gothic / Hiragino Kaku Gothic; substituted with open web
+     fonts of equivalent character for portability). Loaded via
+     next/font/google in app/layout.tsx.
+     ============================================================ */
+
+  --font-family-heading: var(--font-zen-maru-gothic), 'Zen Maru Gothic', sans-serif;
+  --font-family-body: var(--font-noto-sans-jp), 'Noto Sans JP', sans-serif;
+  --font-family-ui: var(--font-zen-kaku-gothic-new), 'Zen Kaku Gothic New', sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --font-size-2xs: 12px;
+  --font-size-xs: 13px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 36px;
+  --font-size-4xl: 48px;
+
+  /* ============================================================
+     Elevation — soft, diffuse shadows tinted with a warm dark
+     neutral (neutral/900) instead of pure black.
+     ============================================================ */
+
+  --shadow-soft-sm: 0 2px 8px rgba(37, 40, 41, 0.06);
+  --shadow-soft-md: 0 6px 16px -2px rgba(37, 40, 41, 0.08), 0 2px 4px rgba(37, 40, 41, 0.04);
+  --shadow-soft-lg: 0 12px 28px -4px rgba(37, 40, 41, 0.10), 0 4px 8px rgba(37, 40, 41, 0.05);
+}
+
+/* ============================================================
+   Text style utility classes — mirror the Figma text styles.
+   ============================================================ */
+
+.text-heading-display { font-family: var(--font-family-heading); font-weight: var(--font-weight-bold); font-size: var(--font-size-3xl); line-height: 46px; }
+.text-heading-h1 { font-family: var(--font-family-heading); font-weight: var(--font-weight-bold); font-size: var(--font-size-2xl); line-height: 38px; }
+.text-heading-h2 { font-family: var(--font-family-heading); font-weight: var(--font-weight-medium); font-size: var(--font-size-xl); line-height: 32px; }
+.text-heading-h3 { font-family: var(--font-family-heading); font-weight: var(--font-weight-medium); font-size: var(--font-size-lg); line-height: 28px; }
+
+.text-body-large { font-family: var(--font-family-body); font-weight: var(--font-weight-regular); font-size: var(--font-size-md); line-height: 27px; }
+.text-body-medium { font-family: var(--font-family-body); font-weight: var(--font-weight-regular); font-size: var(--font-size-sm); line-height: 23px; }
+.text-body-small { font-family: var(--font-family-body); font-weight: var(--font-weight-regular); font-size: var(--font-size-xs); line-height: 21px; }
+
+.text-ui-label-large { font-family: var(--font-family-ui); font-weight: var(--font-weight-medium); font-size: var(--font-size-sm); line-height: 20px; letter-spacing: 0.2px; }
+.text-ui-label-medium { font-family: var(--font-family-ui); font-weight: var(--font-weight-medium); font-size: var(--font-size-xs); line-height: 18px; letter-spacing: 0.2px; }
+.text-ui-button { font-family: var(--font-family-ui); font-weight: var(--font-weight-bold); font-size: var(--font-size-sm); line-height: 20px; letter-spacing: 0.3px; }
+.text-ui-caption { font-family: var(--font-family-ui); font-weight: var(--font-weight-regular); font-size: var(--font-size-2xs); line-height: 17px; letter-spacing: 0.2px; }

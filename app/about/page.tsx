@@ -139,14 +139,14 @@ function SkillCard({ skill }: { skill: Skill }) {
         <IconComponent
           className={skill.color
             ? 'text-3xl transition-transform duration-300 group-hover:scale-110'
-            : 'text-[#6C8FA3] text-3xl group-hover:text-[#D5848C] transition-colors duration-300'}
+            : 'text-[var(--color-bg-main)] text-3xl group-hover:text-[var(--color-bg-accent)] transition-colors duration-300'}
           style={skill.color ? { color: skill.color } : undefined}
         />
         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          <div className="bg-[#6C8FA3] text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+          <div className="text-ui-caption bg-[var(--color-bg-main)] text-[var(--color-text-on-main)] px-2 py-1 rounded-[var(--radius-sm)] whitespace-nowrap">
             {skill.name}
           </div>
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-[#6C8FA3]"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-[var(--color-bg-main)]"></div>
         </div>
       </div>
     </div>
@@ -194,13 +194,13 @@ export default function About() {
   return (
     <>
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="container container--medium py-20">
         {/* Page Title */}
         <section className="mb-16">
-          <h2 className="text-5xl font-bold text-[#6C8FA3] mb-8">
+          <h2 className="text-heading-display mb-8">
             About Me
           </h2>
-          <p className="text-xl text-[#6C8FA3]">
+          <p className="text-body-large text-[var(--color-text-secondary)]">
             Un roseau pensant.
           </p>
         </section>
@@ -208,13 +208,13 @@ export default function About() {
         {/* Profile Section */}
         <section className="mb-16 grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h3 className="text-3xl font-bold text-[#6C8FA3] mb-2">
+            <h3 className="text-heading-h1 mb-2">
               Nakai Ryoka
             </h3>
-            <p className="text-lg text-[#6C8FA3] mb-6">
+            <p className="text-body-medium text-[var(--color-text-secondary)] mb-6">
               中井涼日
             </p>
-            <div className="space-y-[1.6rem] text-[#4A4F52] leading-[1.6]">
+            <div className="space-y-[1.6rem] text-body-large">
               <p>
                 ことばとデザインとお勉強が大好きなヒトです。
               </p>
@@ -232,20 +232,20 @@ export default function About() {
               alt="Nakai Ryoka"
               width={280}
               height={280}
-              className="rounded-lg object-cover shadow-2xl"
+              className="rounded-[var(--radius-lg)] object-cover shadow-[var(--shadow-soft-lg)]"
             />
           </div>
         </section>
 
         {/* Skills Section */}
         <section className="mb-16">
-          <h3 className="text-3xl font-bold text-[#6C8FA3] mb-8">
+          <h3 className="text-heading-h1 mb-8">
             Key
           </h3>
           <div className="space-y-8">
             {/* Design & UI/UX Section */}
-            <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
-              <h4 className="text-lg font-semibold text-[#6C8FA3] mb-6">
+            <div className="paper-outline card card--elevated card--fluid">
+              <h4 className="card__title mb-6">
                 Design & UI/UX
               </h4>
               <div className="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-6">
@@ -256,13 +256,13 @@ export default function About() {
             </div>
 
             {/* Coding & Development Section */}
-            <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
-              <h4 className="text-lg font-semibold text-[#6C8FA3] mb-6">
+            <div className="paper-outline card card--elevated card--fluid">
+              <h4 className="card__title mb-6">
                 Coding & Development
               </h4>
               {loading ? (
                 <div className="flex items-center justify-center py-8">
-                  <p className="text-[#4A4F52]">Now Loading</p>
+                  <p className="text-body-medium text-[var(--color-text-secondary)]">Now Loading</p>
                 </div>
               ) : codingLanguages.length > 0 ? (
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-6">
@@ -272,36 +272,36 @@ export default function About() {
                 </div>
               ) : (
                 <div className="text-center py-8">
-                  <p className="text-[#4A4F52]">GitHubデータ取得に失敗。</p>
+                  <p className="text-body-medium text-[var(--color-text-secondary)]">GitHubデータ取得に失敗。</p>
                 </div>
               )}
             </div>
 
             {/* Languages & Tools Section */}
-            <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg p-8 rounded-2xl">
-              <h4 className="text-lg font-semibold text-[#6C8FA3] mb-6">
+            <div className="paper-outline card card--elevated card--fluid">
+              <h4 className="card__title mb-6">
                 Languages & Tools
               </h4>
               {loading ? (
                 <div className="flex items-center justify-center py-8">
-                  <p className="text-[#4A4F52]">Now Loading...</p>
+                  <p className="text-body-medium text-[var(--color-text-secondary)]">Now Loading...</p>
                 </div>
               ) : githubLanguages.length > 0 ? (
                 <div className="space-y-3">
                   {githubLanguages.slice(0, 5).map((lang) => (
                     <div key={lang.name} className="flex items-center gap-3">
                       <div className="w-32">
-                        <p className="text-sm font-medium text-[#6C8FA3]">
+                        <p className="text-ui-label-medium text-[var(--color-bg-main)]">
                           {lang.name}
                         </p>
                       </div>
-                      <div className="flex-1 bg-[#E8EDF2]/50 rounded-full h-2">
+                      <div className="flex-1 bg-[var(--color-bg-surface-muted)] rounded-[var(--radius-full)] h-2">
                         <div
-                          className="bg-gradient-to-r from-[#6C8FA3] to-[#D5848C] h-2 rounded-full transition-all duration-500"
+                          className="bg-gradient-to-r from-[var(--color-bg-main)] to-[var(--color-bg-accent)] h-2 rounded-[var(--radius-full)] transition-all duration-500"
                           style={{ width: `${lang.percentage}%` }}
                         ></div>
                       </div>
-                      <span className="text-sm text-[#4A4F52] w-12 text-right">
+                      <span className="text-ui-label-medium text-[var(--color-text-secondary)] w-12 text-right">
                         {lang.percentage}%
                       </span>
                     </div>
@@ -309,7 +309,7 @@ export default function About() {
                 </div>
               ) : (
                 <div className="text-center py-8">
-                  <p className="text-[#4A4F52]">GitHubデータ取得に失敗。</p>
+                  <p className="text-body-medium text-[var(--color-text-secondary)]">GitHubデータ取得に失敗。</p>
                 </div>
               )}
             </div>

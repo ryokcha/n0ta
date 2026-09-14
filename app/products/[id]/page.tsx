@@ -44,16 +44,16 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   if (!product) {
     return (
-      <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h1 className="text-4xl font-bold text-[#6C8FA3] mb-4">
+      <div className="container container--medium py-20 text-center">
+        <h1 className="text-heading-h1 mb-4">
           Product Not Found!
         </h1>
-        <p className="text-lg text-[#4A4F52] mb-8">
+        <p className="text-body-large text-[var(--color-text-secondary)] mb-8">
           このプロダクトは見つかりませんでした。URL を確認するか、プロダクト一覧からお探しください。
         </p>
         <Link
           href="/products"
-          className="inline-block px-8 py-3 bg-[#6C8FA3] text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+          className="btn btn--md btn--primary"
         >
           プロダクト一覧に戻る
         </Link>
@@ -62,34 +62,34 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   }
 
   const statusColor = {
-    Completed: "bg-[#D5848C]",
-    "In Progress": "bg-[#6C8FA3]",
-    Planning: "bg-[#D9DEE2]",
+    Completed: "bg-[var(--color-bg-accent)]",
+    "In Progress": "bg-[var(--color-bg-main)]",
+    Planning: "bg-[var(--color-bg-surface-muted)]",
   };
 
   const statusTextColor = {
-    Completed: "text-[#c8d8db]",
-    "In Progress": "text-[#c8d8db]",
-    Planning: "text-[#4A4F52]",
+    Completed: "text-[var(--color-text-on-accent)]",
+    "In Progress": "text-[var(--color-text-on-main)]",
+    Planning: "text-[var(--color-text-secondary)]",
   };
 
   return (
     <>
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="container container--medium py-20">
         {/* Product Header */}
         <section className="mb-12">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h1 className="text-5xl font-bold text-[#6C8FA3] mb-4">
+              <h1 className="text-heading-display mb-4">
                 {product.title}
               </h1>
-              <p className="text-xl text-[#4A4F52] leading-relaxed mb-6">
+              <p className="text-body-large text-[var(--color-text-secondary)] mb-6">
                 {product.description}
               </p>
             </div>
             <span
-              className={`text-sm font-medium px-4 py-2 rounded-full whitespace-nowrap ${
+              className={`text-ui-caption px-4 py-2 rounded-[var(--radius-full)] whitespace-nowrap ${
                 statusColor[product.status]
               } ${statusTextColor[product.status]}`}
             >
@@ -104,7 +104,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                 href={product.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+                className="btn btn--md btn--primary"
               >
                 <svg
                   className="w-5 h-5"
@@ -127,7 +127,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                 {product.images.map((imagePath, index) => (
                   <div
                     key={index}
-                    className="relative w-48 h-32 rounded-xl overflow-hidden bg-[#D9DEE2]"
+                    className="relative w-48 h-32 rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-bg-surface-muted)]"
                   >
                     <Image
                       src={imagePath}
@@ -144,11 +144,11 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
         {/* Full Description */}
         <section className="mb-12">
-          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-[#6C8FA3] mb-4">
+          <div className="paper-outline card card--elevated card--fluid">
+            <h2 className="text-heading-h2 mb-4">
               概要
             </h2>
-            <p className="text-[#4A4F52] leading-relaxed">
+            <p className="text-body-large">
               {product.fullDescription}
             </p>
           </div>
@@ -157,32 +157,32 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         {/* Project Info Grid */}
         <section className="mb-12 grid md:grid-cols-2 gap-8">
           {/* Background */}
-          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-[#6C8FA3] mb-4">
+          <div className="paper-outline card card--elevated card--fluid">
+            <h3 className="text-heading-h3 mb-4">
               作成背景
             </h3>
-            <p className="text-[#4A4F52] leading-relaxed">
+            <p className="text-body-large">
               {product.background}
             </p>
           </div>
 
           {/* Team & Role */}
-          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
+          <div className="paper-outline card card--elevated card--fluid">
+            <h3 className="text-heading-h3 mb-6">
               プロジェクト情報
             </h3>
             <div className="space-y-4">
               <div>
-                <p className="text-sm font-semibold text-[#6C8FA3] mb-1">
+                <p className="text-ui-label-large text-[var(--color-bg-main)] mb-1">
                   制作人数
                 </p>
-                <p className="text-[#4A4F52]">{product.teamSize} 人</p>
+                <p className="text-body-medium">{product.teamSize} 人</p>
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#6C8FA3] mb-1">
+                <p className="text-ui-label-large text-[var(--color-bg-main)] mb-1">
                   担当箇所
                 </p>
-                <p className="text-[#4A4F52]">{product.role}</p>
+                <p className="text-body-medium">{product.role}</p>
               </div>
             </div>
           </div>
@@ -190,15 +190,15 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
         {/* Technologies */}
         <section className="mb-12">
-          <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-[#6C8FA3] mb-6">
+          <div className="paper-outline card card--elevated card--fluid">
+            <h3 className="text-heading-h3 mb-6">
               使用技術
             </h3>
             <div className="flex flex-wrap gap-3">
               {product.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-[#D9DEE2] text-[#4A4F52] rounded-full text-sm font-medium"
+                  className="text-ui-label-medium px-4 py-2 bg-[var(--color-bg-surface-muted)] text-[var(--color-text-secondary)] rounded-[var(--radius-full)]"
                 >
                   {tech}
                 </span>
@@ -208,10 +208,10 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         </section>
 
         {/* Navigation */}
-        <section className="mt-16 pt-12 border-t border-[#D9DEE2]">
+        <section className="mt-16 pt-12 border-t border-[var(--color-border-default)]">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-[#6C8FA3]/80 backdrop-blur-lg text-[#c8d8db] rounded-xl font-medium hover:bg-[#D5848C] transition-colors"
+            className="btn btn--lg btn--primary"
           >
             <span>←</span>
             <span>プロダクト一覧に戻る</span>
