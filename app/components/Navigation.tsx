@@ -22,10 +22,10 @@ export function Navigation() {
 
   return (
     <>
-      <header className="rounded-b-3xl bg-[#567282]/80 backdrop-blur-xl dark:bg-[#567282]/80">
+      <header className="rounded-b-[var(--radius-xl)] bg-[var(--color-bg-main)] shadow-[var(--shadow-soft-sm)]">
         <nav className="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
           <Link href="/">
-            <h1 className="logo text-2xl font-bold text-[#c8d8db] dark:text-[#c8d8db] hover:text-[#D5848C] dark:hover:text-[#D5848C] transition-colors">
+            <h1 className="logo text-2xl font-bold text-[var(--color-text-on-main)] hover:text-[var(--color-bg-accent)] transition-colors">
               n0ta
             </h1>
           </Link>
@@ -36,7 +36,7 @@ export function Navigation() {
               <li key={link.id}>
                 <Link
                   href={link.href}
-                  className="px-6 py-2 rounded-full font-medium transition-colors bg-[#567282] text-[#c8d8db] hover:bg-[#D5848C]"
+                  className="text-ui-button inline-flex items-center px-6 py-2 rounded-[var(--radius-full)] bg-[var(--color-bg-main-hover)] text-[var(--color-text-on-main)] transition-colors hover:bg-[var(--color-bg-accent)]"
                 >
                   {link.label}
                 </Link>
@@ -52,17 +52,17 @@ export function Navigation() {
             aria-expanded={isMenuOpen}
           >
             <span
-              className={`w-6 h-0.5 bg-[#c8d8db] transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-[var(--color-text-on-main)] transition-all duration-300 ${
                 isMenuOpen ? "rotate-45 translate-y-2" : ""
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-[#c8d8db] transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-[var(--color-text-on-main)] transition-all duration-300 ${
                 isMenuOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`w-6 h-0.5 bg-[#c8d8db] transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-[var(--color-text-on-main)] transition-all duration-300 ${
                 isMenuOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             />
@@ -80,13 +80,16 @@ export function Navigation() {
           />
           {/* メニューパネル */}
           <div className="fixed inset-0 flex items-center justify-center md:hidden z-50 pointer-events-none" style={{ alignItems: "center" }}>
-            <div className="pointer-events-auto bg-[#567282]/90 backdrop-blur-xl rounded-3xl p-8 w-11/12 max-w-sm animate-in fade-in zoom-in-95 duration-300" style={{ transform: "translateY(60px)" }}>
+            <div
+              className="pointer-events-auto bg-[var(--color-bg-main)] shadow-[var(--shadow-soft-lg)] rounded-[var(--radius-xl)] p-8 w-11/12 max-w-sm animate-in fade-in zoom-in-95 duration-300"
+              style={{ transform: "translateY(60px)" }}
+            >
               <ul className="flex flex-col gap-4">
                 {links.map((link) => (
                   <li key={link.id}>
                     <Link
                       href={link.href}
-                      className="block px-6 py-3 rounded-full font-medium transition-colors bg-[#D5848C] text-[#c8d8db] hover:bg-[#567282] text-center"
+                      className="text-ui-button block px-6 py-3 rounded-[var(--radius-full)] bg-[var(--color-bg-accent)] text-[var(--color-text-on-accent)] transition-colors hover:bg-[var(--color-bg-accent-hover)] text-center"
                       onClick={closeMenu}
                     >
                       {link.label}

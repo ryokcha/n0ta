@@ -15,13 +15,13 @@ export default function Products() {
   return (
     <>
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="container container--medium py-20">
         {/* Page Title */}
         <section className="mb-16">
-          <h2 className="text-5xl font-bold text-[#6C8FA3] mb-8">
+          <h2 className="text-heading-display mb-8">
             Products & Projects
           </h2>
-          <p className="text-xl text-[#4A4F52]">
+          <p className="text-body-large text-[var(--color-text-secondary)]">
             What did I do? If you wanna know, check it out now.
           </p>
         </section>
@@ -33,21 +33,21 @@ export default function Products() {
               <Link
                 key={product.id}
                 href={`/products/${product.id}`}
-                className="block"
+                className="block h-full"
               >
-                <div className="paper-outline bg-[#fcf7f8]/50 backdrop-blur-lg rounded-2xl p-8 hover:shadow-lg transition-shadow cursor-pointer h-full hover:bg-[#fcf7f8]/70">
+                <div className="paper-outline card card--elevated card--fluid h-full transition-shadow hover:shadow-[var(--shadow-soft-lg)]">
                   {/* Project Header */}
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-[#6C8FA3]">
+                    <h3 className="card__title">
                       {product.title}
                     </h3>
                     <span
-                      className={`text-sm font-medium px-3 py-1 rounded-full ${
+                      className={`text-ui-caption px-3 py-1 rounded-[var(--radius-full)] whitespace-nowrap ${
                         product.status === "Completed"
-                          ? "bg-[#D5848C] text-[#c8d8db]"
+                          ? "bg-[var(--color-bg-accent)] text-[var(--color-text-on-accent)]"
                           : product.status === "In Progress"
-                            ? "bg-[#6C8FA3] text-[#c8d8db]"
-                            : "bg-[#D9DEE2] text-[#4A4F52]"
+                            ? "bg-[var(--color-bg-main)] text-[var(--color-text-on-main)]"
+                            : "bg-[var(--color-bg-surface-muted)] text-[var(--color-text-secondary)]"
                       }`}
                     >
                       {product.status}
@@ -55,7 +55,7 @@ export default function Products() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-[#4A4F52] mb-6 leading-relaxed">
+                  <p className="card__body">
                     {product.description}
                   </p>
                 </div>
